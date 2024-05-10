@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Block from '../../Block';
 import Card from '../../Card';
 
@@ -36,7 +37,11 @@ const Home = () => {
           <h3 className='text-slate-600 font-bold'>
             Evento que podrian interesarte
           </h3>
-          <span className='text-slate-600 text-sm'>Ver todos los eventos</span>
+          <Link
+            to='/events'
+            className='text-slate-600 text-sm'>
+            Ver todos los eventos
+          </Link>
         </header>
         <ul className='grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 '>
           <li>
