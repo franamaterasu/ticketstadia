@@ -1,7 +1,16 @@
+import { useDispatch } from 'react-redux';
 import { MdFavorite } from 'react-icons/md';
+import { addEvent } from '../../store/reducers/eventsSlice';
+import { Fest } from '../../types';
 
 const Card = ({ info }) => {
-  const { id, imagen, nombre, descripcion, categoria } = info;
+  const { imagen, nombre, descripcion, categoria } = info;
+
+  const dispatch = useDispatch();
+
+  const handleClick = (info: Fest) => {
+    dispatch(addEvent(info));
+  };
 
   return (
     <div className='rounded shadow-lg w-full'>
@@ -21,7 +30,10 @@ const Card = ({ info }) => {
             {categoria}
           </span>
 
-          <MdFavorite className='text-red-500 text-3xl' />
+          <MdFavorite
+            className='text-red-500 text-3xl'
+            onClick={() => handleClick(info)}
+          />
         </div>
       </section>
     </div>

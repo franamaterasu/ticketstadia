@@ -3,11 +3,13 @@ import Header from './components/Header';
 import Home from './components/pages/Home';
 import Profile from './components/pages/Profile';
 import Events from './components/pages/Events';
+import { Provider } from 'react-redux';
+import store from './store/';
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Provider store={store}>
         <Header />
         <section className='bg-slate-100'>
           <Routes>
@@ -25,8 +27,8 @@ function App() {
             />
           </Routes>
         </section>
-      </BrowserRouter>
-    </>
+      </Provider>
+    </BrowserRouter>
   );
 }
 
