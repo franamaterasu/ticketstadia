@@ -1,14 +1,21 @@
 import { RiHeartAddFill } from 'react-icons/ri';
 import ImageProfile from '../ImageProfile';
+import { Profile } from '../../types';
 
-const Block = () => {
+type UserProps = {
+  user: Profile;
+};
+
+const Block = ({ user }: UserProps) => {
+  const { imagen, nombre } = user;
+
   return (
-    <div className='flex items-center justify-between bg-gray-100 rounded-lg shadow-md p-4 mb-4'>
+    <div className='flex items-center justify-between bg-gray-100 rounded-lg shadow-md p-4'>
       <div className='flex items-center'>
         <div className='flex-shrink-0 mr-4'>
-          <ImageProfile />
+          <ImageProfile image={imagen} />
         </div>
-        <p className='text-gray-700'>Jane Doe</p>
+        <p className='text-gray-700'>{nombre}</p>
       </div>
       <div>
         <button className='text-gray-900 text-3xl'>

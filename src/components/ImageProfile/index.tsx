@@ -1,9 +1,13 @@
-const ImageProfile = () => {
+type ImageProfileProps = {
+  image: string;
+};
+
+const ImageProfile = ({ image }: ImageProfileProps) => {
   return (
     <img
-      src='https://randomuser.me/api/portraits/women/45.jpg'
+      src={image}
       alt='Imagen de Perfil'
-      className='rounded-full'
+      className='rounded-lg'
       width={40}
     />
   );

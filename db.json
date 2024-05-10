@@ -1,0 +1,174 @@
+{
+  "usuario": {
+    "id": 1,
+    "imagen": "https://randomuser.me/api/portraits/women/79.jpg",
+    "nombre": "Jane Doe",
+    "ciudad": "Madrid",
+    "telefono": "650344455",
+    "email": "jane.doe@example.com"
+  },
+  "listaDePersonas": [
+    {
+      "id": 1,
+      "imagen": "https://randomuser.me/api/portraits/women/3.jpg",
+      "nombre": "Madison Ramos",
+      "ciudad": "Paris",
+      "telefono": "650344450",
+      "email": "madison.ramos@example.com"
+    },
+    {
+      "id": 2,
+      "imagen": "https://randomuser.me/api/portraits/women/6.jpg",
+      "nombre": "Daisy Ortiz",
+      "ciudad": "Malmo",
+      "telefono": "650344451",
+      "email": "daisy.ortiz@example.com"
+    },
+    {
+      "id": 3,
+      "imagen": "https://randomuser.me/api/portraits/men/61.jpg",
+      "nombre": "Lucas Gordon",
+      "ciudad": "Barcelona",
+      "telefono": "650344452",
+      "email": "lucas.gordon@example.com"
+    },
+    {
+      "id": 4,
+      "imagen": "https://randomuser.me/api/portraits/men/95.jpg",
+      "nombre": "Arthur Morris",
+      "ciudad": "Munich",
+      "telefono": "650944455",
+      "email": "arthur.morris@example.com"
+    },
+    {
+      "id": 5,
+      "imagen": "https://randomuser.me/api/portraits/women/58.jpg",
+      "nombre": "Pearl Fernandez",
+      "ciudad": "Viena",
+      "telefono": "651344455",
+      "email": "pearl.fernandez@example.com"
+    },
+    {
+      "id": 6,
+      "imagen": "https://randomuser.me/api/portraits/men/74.jpg",
+      "nombre": "Floyd West",
+      "ciudad": "Madrid",
+      "telefono": "650844455",
+      "email": "floyd.west@example.com"
+    },
+    {
+      "id": 7,
+      "imagen": "https://randomuser.me/api/portraits/women/5.jpg",
+      "nombre": "Sue Bradley",
+      "ciudad": "Moscu",
+      "telefono": "650340455",
+      "email": "sue.bradley@example.com"
+    },
+    {
+      "id": 8,
+      "imagen": "https://randomuser.me/api/portraits/men/90.jpg",
+      "nombre": "Marvin Weaver",
+      "ciudad": "Tokio",
+      "telefono": "650364455",
+      "email": "marvin.weaver@example.com"
+    },
+    {
+      "id": 9,
+      "imagen": "https://randomuser.me/api/portraits/women/11.jpg",
+      "nombre": "Felicia Barnes",
+      "ciudad": "Oslo",
+      "telefono": "650344422",
+      "email": "felicia.barnes@example.com"
+    },
+    {
+      "id": 10,
+      "imagen": "https://randomuser.me/api/portraits/women/34.jpg",
+      "nombre": "Mae Fisher",
+      "ciudad": "Lisboa",
+      "telefono": "655534455",
+      "email": "mae.fisher@example.com"
+    }
+  ],
+  "festivales": [
+    {
+      "id": 1,
+      "imagen": "https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Festival de Rock en el Valle",
+      "descripcion": "¡Únete a nosotros en el valle para un fin de semana lleno de riffs de guitarra, solos enérgicos y pura adrenalina rockera!",
+      "categoria": "Rock",
+      "precio": 50
+    },
+    {
+      "id": 2,
+      "imagen": "https://images.pexels.com/photos/4107696/pexels-photo-4107696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "ElectroFest",
+      "descripcion": "¡Prepárate para una experiencia audiovisual única! ElectroFest te llevará a un viaje a través de los ritmos y sonidos más vibrantes de la música electrónica.",
+      "categoria": "Electrónica",
+      "precio": 70
+    },
+    {
+      "id": 3,
+      "imagen": "https://images.pexels.com/photos/442540/pexels-photo-442540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "JazzFusion Festival",
+      "descripcion": "Explora la fusión de jazz con otros géneros musicales en este festival único. Desde el swing clásico hasta el jazz contemporáneo, ¡tendrás un día lleno de improvisación y creatividad!",
+      "categoria": "Jazz",
+      "precio": 60
+    },
+    {
+      "id": 4,
+      "imagen": "https://images.pexels.com/photos/736355/pexels-photo-736355.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "nombre": "Country Roots Festival",
+      "descripcion": "¡Saca tus botas y tu sombrero de vaquero para un fin de semana de música country auténtica! Disfruta de las melodías conmovedoras y las letras que llegan al corazón en el Country Roots Festival.",
+      "categoria": "Country",
+      "precio": 55
+    },
+    {
+      "id": 5,
+      "imagen": "https://images.pexels.com/photos/167605/pexels-photo-167605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Indie Waves Festival",
+      "descripcion": "Descubre las últimas bandas y artistas independientes en el escenario indie más grande del año. Indie Waves Festival es el lugar donde las nuevas tendencias musicales toman forma.",
+      "categoria": "Indie",
+      "precio": 65
+    },
+    {
+      "id": 6,
+      "imagen": "https://images.pexels.com/photos/1190295/pexels-photo-1190295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Hip Hop Jam",
+      "descripcion": "¡Prepárate para moverte al ritmo de los beats más frescos y las rimas más afiladas! Hip Hop Jam reúne a los mejores artistas de la escena hip hop para una noche inolvidable.",
+      "categoria": "Hip Hop",
+      "precio": 75
+    },
+    {
+      "id": 7,
+      "imagen": "https://images.pexels.com/photos/3172566/pexels-photo-3172566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Reggae Rhythms Festival",
+      "descripcion": "Siente la vibración positiva del reggae en este festival lleno de ritmos relajantes y mensajes inspiradores. ¡Deja que la música te lleve en un viaje hacia la paz y la armonía!",
+      "categoria": "Reggae",
+      "precio": 60
+    },
+    {
+      "id": 8,
+      "imagen": "https://images.pexels.com/photos/1918162/pexels-photo-1918162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Latin Beats Fiesta",
+      "descripcion": "¡Baila al ritmo de la música latina más caliente en la Latin Beats Fiesta! Desde la salsa hasta el reggaetón, este festival te hará vibrar con su energía contagiosa.",
+      "categoria": "Latin",
+      "precio": 70
+    },
+    {
+      "id": 9,
+      "imagen": "https://images.pexels.com/photos/3101522/pexels-photo-3101522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "TechnoSphere",
+      "descripcion": "Explora la intersección entre la música electrónica y la tecnología en TechnoSphere. Con actuaciones innovadoras y experiencias audiovisuales futuristas, ¡este festival te llevará a otro nivel!",
+      "categoria": "Techno",
+      "precio": 80
+    },
+    {
+      "id": 10,
+      "imagen": "https://images.pexels.com/photos/3122799/pexels-photo-3122799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Classical Serenade",
+      "descripcion": "Sumérgete en la belleza intemporal de la música clásica en el Classical Serenade. Desde piezas emblemáticas hasta interpretaciones contemporáneas, este festival es un tributo a la grandeza de la música clásica.",
+      "categoria": "Clásica",
+      "precio": 55
+    }
+  ]
+}
