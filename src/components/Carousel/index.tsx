@@ -7,7 +7,7 @@ import useFetch from '../hooks/useFetch';
 const CarouselEvents = () => {
   const fests = useFetch('http://localhost:3000/festivales');
 
-  const festsdestacados = fests.data?.filter(
+  const festsdestacados = fests.data.filter(
     (fest: { destacado: boolean }) => fest.destacado === true
   );
 

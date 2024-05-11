@@ -3,7 +3,7 @@ import { Data } from '../../types';
 import axios from 'axios';
 
 const useFetch = (url: string) => {
-  const [data, setData] = useState<Data | null>(null);
+  const [data, setData] = useState<Data>([]);
 
   useEffect(() => {
     axios

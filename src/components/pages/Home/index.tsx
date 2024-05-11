@@ -31,7 +31,7 @@ const Home = () => {
           </Link>
         </header>
         <ul className='grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 '>
-          {fests.data?.slice(0, 8)?.map((fest: Fest) => (
+          {fests.data.slice(0, 8).map((fest: Fest) => (
             <li key={fest.id}>
               <Card info={fest} />
             </li>

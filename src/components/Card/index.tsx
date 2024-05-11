@@ -4,7 +4,7 @@ import { addEvent } from '../../store/reducers/eventsSlice';
 import { Fest } from '../../types';
 
 const Card = ({ info }) => {
-  const { imagen, nombre, descripcion, categoria } = info;
+  const { imagen, nombre, descripcion, categoria, precio } = info;
 
   const dispatch = useDispatch();
 
@@ -13,13 +13,16 @@ const Card = ({ info }) => {
   };
 
   return (
-    <div className='rounded shadow-lg w-full'>
+    <div className='rounded shadow-lg w-full relative'>
       <img
         className='w-full'
         src={imagen}
         alt={nombre}
         style={{ maxHeight: '180px' }}
       />
+      <span className='inline-block bg-blue-500 text-white text-md px-5 py-1 font-semibold rounded-full absolute right-5 top-5'>
+        {precio}€
+      </span>
       <section className='p-6'>
         <div className='mb-6'>
           <h4 className='font-bold text-xl mb-3'>{nombre}</h4>

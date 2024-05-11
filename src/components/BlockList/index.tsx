@@ -11,7 +11,7 @@ const BlockList = () => {
         className='overflow-y-scroll'
         style={{ maxHeight: '300px' }}>
         <ul className='md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-1 lg:gap-0'>
-          {users.data?.slice(0, 6).map((user: Profile) => (
+          {users.data.slice(0, 6).map((user: Profile) => (
             <li
               key={user.id}
               className='mb-4 last:mb-0'>
