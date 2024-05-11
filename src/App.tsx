@@ -5,6 +5,7 @@ import Profile from './components/pages/Profile';
 import Events from './components/pages/Events';
 import { Provider } from 'react-redux';
 import store from './store/';
+import EventDetail from './components/pages/EventDetail';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
             <Route
               path='/events'
               element={<Events />}
+            />
+            <Route
+              path='/event/:eventId'
+              element={<EventDetail />}
             />
           </Routes>
         </section>

@@ -43,19 +43,19 @@ const Events = () => {
           <input
             type='text'
             placeholder='Busca tu concierto...'
-            className='w-1/3 border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+            className='w-1/3 border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
             onChange={(e) => setSearch(e.target.value)}
           />
           <div className='flex gap-5'>
             <select
-              className='w-1/2 border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+              className='w-1/2 border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
               onChange={(e) => setSortValue(e.target.value)}>
               <option value='all'>Ordernar por:</option>
               <option value='nombre'>Nombre</option>
               <option value='precio'>Precio</option>
             </select>
             <select
-              className='w-1/2 border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+              className='w-1/2 border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
               onChange={(e) => setSelectedCategory(e.target.value)}>
               <option value='all'>Selecciona un genero de musica</option>
               {categories.map((category) => {
