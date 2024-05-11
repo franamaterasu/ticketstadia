@@ -96,7 +96,8 @@
       "nombre": "Festival de Rock en el Valle",
       "descripcion": "¡Únete a nosotros en el valle para un fin de semana lleno de riffs de guitarra, solos enérgicos y pura adrenalina rockera!",
       "categoria": "Rock",
-      "precio": 50
+      "precio": 50,
+      "destacado": false
     },
     {
       "id": 2,
@@ -104,7 +105,8 @@
       "nombre": "ElectroFest",
       "descripcion": "¡Prepárate para una experiencia audiovisual única! ElectroFest te llevará a un viaje a través de los ritmos y sonidos más vibrantes de la música electrónica.",
       "categoria": "Electrónica",
-      "precio": 70
+      "precio": 70,
+      "destacado": true
     },
     {
       "id": 3,
@@ -112,7 +114,8 @@
       "nombre": "JazzFusion Festival",
       "descripcion": "Explora la fusión de jazz con otros géneros musicales en este festival único. Desde el swing clásico hasta el jazz contemporáneo, ¡tendrás un día lleno de improvisación y creatividad!",
       "categoria": "Jazz",
-      "precio": 60
+      "precio": 60,
+      "destacado": true
     },
     {
       "id": 4,
@@ -120,7 +123,8 @@
       "nombre": "Country Roots Festival",
       "descripcion": "¡Saca tus botas y tu sombrero de vaquero para un fin de semana de música country auténtica! Disfruta de las melodías conmovedoras y las letras que llegan al corazón en el Country Roots Festival.",
       "categoria": "Country",
-      "precio": 55
+      "precio": 55,
+      "destacado": true
     },
     {
       "id": 5,
@@ -128,7 +132,8 @@
       "nombre": "Indie Waves Festival",
       "descripcion": "Descubre las últimas bandas y artistas independientes en el escenario indie más grande del año. Indie Waves Festival es el lugar donde las nuevas tendencias musicales toman forma.",
       "categoria": "Indie",
-      "precio": 65
+      "precio": 65,
+      "destacado": false
     },
     {
       "id": 6,
@@ -136,7 +141,8 @@
       "nombre": "Hip Hop Jam",
       "descripcion": "¡Prepárate para moverte al ritmo de los beats más frescos y las rimas más afiladas! Hip Hop Jam reúne a los mejores artistas de la escena hip hop para una noche inolvidable.",
       "categoria": "Hip Hop",
-      "precio": 75
+      "precio": 75,
+      "destacado": true
     },
     {
       "id": 7,
@@ -144,7 +150,8 @@
       "nombre": "Reggae Rhythms Festival",
       "descripcion": "Siente la vibración positiva del reggae en este festival lleno de ritmos relajantes y mensajes inspiradores. ¡Deja que la música te lleve en un viaje hacia la paz y la armonía!",
       "categoria": "Reggae",
-      "precio": 60
+      "precio": 60,
+      "destacado": false
     },
     {
       "id": 8,
@@ -152,7 +159,8 @@
       "nombre": "Latin Beats Fiesta",
       "descripcion": "¡Baila al ritmo de la música latina más caliente en la Latin Beats Fiesta! Desde la salsa hasta el reggaetón, este festival te hará vibrar con su energía contagiosa.",
       "categoria": "Latin",
-      "precio": 70
+      "precio": 70,
+      "destacado": false
     },
     {
       "id": 9,
@@ -160,7 +168,8 @@
       "nombre": "TechnoSphere",
       "descripcion": "Explora la intersección entre la música electrónica y la tecnología en TechnoSphere. Con actuaciones innovadoras y experiencias audiovisuales futuristas, ¡este festival te llevará a otro nivel!",
       "categoria": "Techno",
-      "precio": 80
+      "precio": 80,
+      "destacado": false
     },
     {
       "id": 10,
@@ -168,7 +177,8 @@
       "nombre": "Classical Serenade",
       "descripcion": "Sumérgete en la belleza intemporal de la música clásica en el Classical Serenade. Desde piezas emblemáticas hasta interpretaciones contemporáneas, este festival es un tributo a la grandeza de la música clásica.",
       "categoria": "Clásica",
-      "precio": 55
+      "precio": 55,
+      "destacado": false
     }
   ]
 }

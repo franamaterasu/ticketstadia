@@ -7,6 +7,10 @@ import useFetch from '../hooks/useFetch';
 const CarouselEvents = () => {
   const fests = useFetch('http://localhost:3000/festivales');
 
+  const festsdestacados = fests.data?.filter(
+    (fest: { destacado: boolean }) => fest.destacado === true
+  );
+
   return (
     <Carousel
       autoPlay
@@ -15,7 +19,7 @@ const CarouselEvents = () => {
       showThumbs={false}
       showStatus={false}
       stopOnHover={false}>
-      {fests.data?.map((fest: Fest) => (
+      {festsdestacados.map((fest: Fest) => (
         <CarouselItem
           fest={fest}
           key={fest.id}

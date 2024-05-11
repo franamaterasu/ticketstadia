@@ -15,6 +15,7 @@ export type Fest = {
   descripcion: string;
   categoria: string;
   precio: number;
+  destacado: boolean;
 };
 
 export type Data = { [key: string]: any };
