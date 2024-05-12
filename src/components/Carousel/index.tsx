@@ -3,6 +3,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import CarouselItem from '../CarouselItem';
 import { Fest } from '../../types';
 import useFetch from '../hooks/useFetch';
+import { Link } from 'react-router-dom';
 
 const CarouselEvents = () => {
   const fests = useFetch('http://localhost:3000/festivales');
@@ -20,10 +21,12 @@ const CarouselEvents = () => {
       showStatus={false}
       stopOnHover={false}>
       {festsdestacados.map((fest: Fest) => (
-        <CarouselItem
-          fest={fest}
-          key={fest.id}
-        />
+        <Link to={`event/${fest.id}`}>
+          <CarouselItem
+            fest={fest}
+            key={fest.id}
+          />
+        </Link>
       ))}
     </Carousel>
   );

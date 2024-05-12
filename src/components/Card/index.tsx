@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { MdFavorite, MdDelete } from 'react-icons/md';
 import { FaEye } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { addEvent, deleteEvent } from '../../store/reducers/eventsSlice';
 import { Fest } from '../../types';
 
@@ -10,6 +10,8 @@ type CardProps = {
 };
 
 const Card = ({ info }: CardProps) => {
+  const location = useLocation();
+
   const { imagen, nombre, descripcion, categoria, precio } = info;
 
   const { events } = useSelector((state) => state.events);
@@ -52,12 +54,14 @@ const Card = ({ info }: CardProps) => {
             <Link to={`/event/${info.id}`}>
               <FaEye className='text-green-500 text-3xl' />
             </Link>
-            {!eventExist ? (
+            {!eventExist && (
               <MdFavorite
                 className='text-red-500 text-3xl'
                 onClick={() => handleAddClick(info)}
               />
-            ) : (
+            )}
+
+            {eventExist && location.pathname === '/profile/events' && (
               <MdDelete
                 className='text-red-500 text-3xl'
                 onClick={() => handleDeleteClick(info.id)}
