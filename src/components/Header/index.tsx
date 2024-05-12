@@ -17,7 +17,7 @@ const Header = () => {
             Ticketstadia
           </Link>
         </div>
-        <Link to='/profile'>
+        <Link to='/profile/events'>
           <ImageProfile
             image={userImage}
             size={40}
