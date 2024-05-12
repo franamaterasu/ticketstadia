@@ -6,6 +6,8 @@ import Events from './components/pages/Events';
 import { Provider } from 'react-redux';
 import store from './store/';
 import EventDetail from './components/pages/EventDetail';
+import FavoriteEvents from './components/pages/FavoriteEvents';
+import Friends from './components/pages/Friends';
 
 function App() {
   return (
@@ -20,8 +22,16 @@ function App() {
             />
             <Route
               path='/profile'
-              element={<Profile />}
-            />
+              element={<Profile />}>
+              <Route
+                path='events'
+                element={<FavoriteEvents />}
+              />
+              <Route
+                path='friends'
+                element={<Friends />}
+              />
+            </Route>
             <Route
               path='/events'
               element={<Events />}

@@ -2,7 +2,6 @@ export type Profile = {
   id: number;
   imagen: string;
   nombre: string;
-  apellidos: string;
   ciudad: string;
   telefono: string;
   email: string;

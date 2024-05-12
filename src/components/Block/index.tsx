@@ -13,7 +13,10 @@ const Block = ({ user }: UserProps) => {
     <div className='flex items-center justify-between bg-gray-100 rounded-lg shadow-md p-4'>
       <div className='flex items-center'>
         <div className='flex-shrink-0 mr-4'>
-          <ImageProfile image={imagen} />
+          <ImageProfile
+            image={imagen}
+            size={50}
+          />
         </div>
         <p className='text-gray-700'>{nombre}</p>
       </div>

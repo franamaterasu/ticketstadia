@@ -18,7 +18,10 @@ const Header = () => {
           </Link>
         </div>
         <Link to='/profile'>
-          <ImageProfile image={userImage} />
+          <ImageProfile
+            image={userImage}
+            size={40}
+          />
         </Link>
       </div>
     </header>

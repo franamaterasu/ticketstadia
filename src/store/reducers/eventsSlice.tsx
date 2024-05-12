@@ -15,7 +15,13 @@ export const eventsSlice = createSlice({
     addEvent: (state, action) => {
       const event: Fest = action.payload;
 
-      state.events = [...state.events, event];
+      const eventExist = state.events.some(
+        (favoriteEvent) => favoriteEvent.id === event.id
+      );
+
+      !eventExist
+        ? (state.events = [...state.events, event])
+        : alert('El evento ya existe en tu lista');
     },
   },
 });
