@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import ImageProfile from '../../ImageProfile';
-import useFetch from '../../hooks/useFetch';
+import ImageProfile from '../../components/ImageProfile';
+import useFetch from '../../components/hooks/useFetch';
 
 const Profile = () => {
   const user = useFetch('http://localhost:3000/usuario');

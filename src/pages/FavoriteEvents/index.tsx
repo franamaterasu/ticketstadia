@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
-import { Fest } from '../../../types';
-import Card from '../../Card';
-import Alert from '../../Alert';
+import { Fest } from '../../types';
+import Card from '../../components/Card';
+import Alert from '../../components/Alert';
 
 const FavoriteEvents = () => {
   const { events } = useSelector((state) => state.events);
@@ -17,7 +17,7 @@ const FavoriteEvents = () => {
           ))}
         </ul>
       ) : (
-        <Alert />
+        <Alert message='No existen eventos en la lista de favoritos' />
       )}
     </section>
   );

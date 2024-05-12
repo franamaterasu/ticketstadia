@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Home from './components/pages/Home';
-import Profile from './components/pages/Profile';
-import Events from './components/pages/Events';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Events from './pages/Events';
 import { Provider } from 'react-redux';
 import store from './store/';
-import EventDetail from './components/pages/EventDetail';
-import FavoriteEvents from './components/pages/FavoriteEvents';
-import Friends from './components/pages/Friends';
+import EventDetail from './pages/EventDetail';
+import FavoriteEvents from './pages/FavoriteEvents';
+import Friends from './pages/Friends';
 
 function App() {
   return (

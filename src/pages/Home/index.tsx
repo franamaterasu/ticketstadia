@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import Card from '../../Card';
-import BlockList from '../../BlockList';
-import useFetch from '../../hooks/useFetch';
-import { Fest } from '../../../types';
-import CarouselEvents from '../../Carousel';
+import Card from '../../components/Card';
+import BlockList from '../../components/BlockList';
+import useFetch from '../../components/hooks/useFetch';
+import { Fest } from '../../types';
+import CarouselEvents from '../../components/Carousel';
 
 const Home = () => {
   const fests = useFetch('http://localhost:3000/festivales');

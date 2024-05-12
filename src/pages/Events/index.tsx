@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Fest } from '../../../types';
-import Card from '../../Card';
-import useFetch from '../../hooks/useFetch';
-import Pagination from '../../Pagination';
+import { Fest } from '../../types';
+import Card from '../../components/Card';
+import useFetch from '../../components/hooks/useFetch';
+import Pagination from '../../components/Pagination';
+import Alert from '../../components/Alert';
 
 const Events = () => {
   const [search, setSearch] = useState('');
@@ -94,19 +95,25 @@ const Events = () => {
         </section>
       </section>
       <section className='container mx-auto pb-5'>
-        <ul className='grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-          {currentItems.map((fest: Fest) => (
-            <li key={fest.id}>
-              <Card info={fest} />
-            </li>
-          ))}
-        </ul>
+        {currentItems.length > 0 ? (
+          <>
+            <ul className='grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+              {currentItems.map((fest: Fest) => (
+                <li key={fest.id}>
+                  <Card info={fest} />
+                </li>
+              ))}
+            </ul>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={Math.ceil(festsfilter().length / eventsPerPage)}
+              onPageChange={handlePageChange}
+            />
+          </>
+        ) : (
+          <Alert message='No existen eventos con tus condiciones de busqueda' />
+        )}
       </section>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={Math.ceil(festsfilter().length / eventsPerPage)}
-        onPageChange={handlePageChange}
-      />
     </>
   );
 };
