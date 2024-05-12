@@ -23,9 +23,15 @@ export const eventsSlice = createSlice({
         ? (state.events = [...state.events, event])
         : alert('El evento ya existe en tu lista');
     },
+
+    deleteEvent: (state, action) => {
+      const id: number = action.payload;
+
+      state.events = state.events.filter((item) => item.id !== id);
+    },
   },
 });
 
-export const { addEvent } = eventsSlice.actions;
+export const { addEvent, deleteEvent } = eventsSlice.actions;
 
 export default eventsSlice.reducer;

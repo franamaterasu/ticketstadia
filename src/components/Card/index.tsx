@@ -1,8 +1,8 @@
-import { useDispatch } from 'react-redux';
-import { MdFavorite } from 'react-icons/md';
+import { useDispatch, useSelector } from 'react-redux';
+import { MdFavorite, MdDelete } from 'react-icons/md';
 import { FaEye } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { addEvent } from '../../store/reducers/eventsSlice';
+import { addEvent, deleteEvent } from '../../store/reducers/eventsSlice';
 import { Fest } from '../../types';
 
 type CardProps = {
@@ -12,10 +12,20 @@ type CardProps = {
 const Card = ({ info }: CardProps) => {
   const { imagen, nombre, descripcion, categoria, precio } = info;
 
+  const { events } = useSelector((state) => state.events);
+
+  const eventExist = events.some(
+    (favoriteEvent) => favoriteEvent.id === info.id
+  );
+
   const dispatch = useDispatch();
 
-  const handleClick = (info: Fest) => {
+  const handleAddClick = (info: Fest) => {
     dispatch(addEvent(info));
+  };
+
+  const handleDeleteClick = (id: number) => {
+    dispatch(deleteEvent(id));
   };
 
   return (
@@ -42,10 +52,17 @@ const Card = ({ info }: CardProps) => {
             <Link to={`/event/${info.id}`}>
               <FaEye className='text-green-500 text-3xl' />
             </Link>
-            <MdFavorite
-              className='text-red-500 text-3xl'
-              onClick={() => handleClick(info)}
-            />
+            {!eventExist ? (
+              <MdFavorite
+                className='text-red-500 text-3xl'
+                onClick={() => handleAddClick(info)}
+              />
+            ) : (
+              <MdDelete
+                className='text-red-500 text-3xl'
+                onClick={() => handleDeleteClick(info.id)}
+              />
+            )}
           </div>
         </div>
       </section>
