@@ -21,7 +21,7 @@ const BlockList = () => {
         </ul>
       </div>
 
-      <button className='bg-blue-500 w-1/2  mx-auto text-white font-bold py-2 px-4 rounded block mt-10 lg:w-full'>
+      <button className='bg-blue-500 hover:bg-blue-700 w-1/2  mx-auto text-white font-bold py-2 px-4 rounded block mt-10 lg:w-full'>
         Busca nuevos amigos
       </button>
     </>

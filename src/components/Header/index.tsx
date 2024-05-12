@@ -1,11 +1,11 @@
+import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
 import ImageProfile from '../ImageProfile';
-import useFetch from '../hooks/useFetch';
 
 const Header = () => {
-  const user = useFetch('http://localhost:3000/usuario');
+  const { user } = useAuth0();
 
-  const userImage = user.data.imagen;
+  const { picture } = user;
 
   return (
     <header className='bg-gray-900 text-white py-4 px-5'>
@@ -19,7 +19,7 @@ const Header = () => {
         </div>
         <Link to='/profile/events'>
           <ImageProfile
-            image={userImage}
+            image={picture}
             size={40}
           />
         </Link>

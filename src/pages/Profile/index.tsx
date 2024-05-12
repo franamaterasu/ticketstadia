@@ -1,25 +1,32 @@
+import { useAuth0 } from '@auth0/auth0-react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import { IoMdLogOut } from 'react-icons/io';
 import ImageProfile from '../../components/ImageProfile';
-import useFetch from '../../components/hooks/useFetch';
 
 const Profile = () => {
-  const user = useFetch('http://localhost:3000/usuario');
-
   const location = useLocation();
 
-  const userInfo = user.data;
+  const { user, logout } = useAuth0();
 
-  const { imagen, nombre } = userInfo;
+  const { picture, name, email } = user;
 
   return (
     <>
       <section className='container mx-auto py-10 text-center'>
         <ImageProfile
-          image={imagen}
+          image={picture}
           size={127}
           classNames='mx-auto mb-5'
         />
-        <h3 className='text-2xl font-bold'>{nombre}</h3>
+        <h3 className='text-2xl font-bold mb-2'>{name}</h3>
+        <p className='text-md font-light'>{email}</p>
+        <button
+          className='bg-red-500 mx-auto mt-5 rounded-md p-2'
+          onClick={() =>
+            logout({ logoutParams: { returnTo: window.location.origin } })
+          }>
+          <IoMdLogOut className='text-3xl  text-white' />
+        </button>
       </section>
       <section className='bg-white min-h-[calc(100vh-300px)]'>
         <section className='container mx-auto py-10'>

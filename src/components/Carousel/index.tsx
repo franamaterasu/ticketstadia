@@ -21,11 +21,10 @@ const CarouselEvents = () => {
       showStatus={false}
       stopOnHover={false}>
       {festsdestacados.map((fest: Fest) => (
-        <Link to={`event/${fest.id}`}>
-          <CarouselItem
-            fest={fest}
-            key={fest.id}
-          />
+        <Link
+          to={`event/${fest.id}`}
+          key={fest.id}>
+          <CarouselItem fest={fest} />
         </Link>
       ))}
     </Carousel>

@@ -1,12 +1,4 @@
 {
-  "usuario": {
-    "id": 1,
-    "imagen": "https://randomuser.me/api/portraits/women/79.jpg",
-    "nombre": "Jane Doe",
-    "ciudad": "Madrid",
-    "telefono": "650344455",
-    "email": "jane.doe@example.com"
-  },
   "listaDePersonas": [
     {
       "id": 1,

@@ -41,7 +41,7 @@ const Card = ({ info }: CardProps) => {
       <span className='inline-block bg-blue-500 text-white text-md px-5 py-1 font-semibold rounded-full absolute right-5 top-5'>
         {precio}€
       </span>
-      <section className='p-6'>
+      <section className='p-6 bg-white'>
         <div className='mb-6'>
           <h4 className='font-bold text-xl mb-3'>{nombre}</h4>
           <p className='font-light'>{descripcion}</p>

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
@@ -8,17 +9,20 @@ import store from './store/';
 import EventDetail from './pages/EventDetail';
 import FavoriteEvents from './pages/FavoriteEvents';
 import Friends from './pages/Friends';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
+  const { isAuthenticated } = useAuth0();
+
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <Header />
-        <section className='bg-slate-100 min-h-[calc(100vh-72px)]'>
+        {isAuthenticated && <Header />}
+        <section className='bg-slate-100'>
           <Routes>
             <Route
               path='/'
-              element={<Home />}
+              element={!isAuthenticated ? <Login /> : <Home />}
             />
             <Route
               path='/profile'
