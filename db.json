@@ -167,7 +167,7 @@
       "imagen": "https://images.pexels.com/photos/3101522/pexels-photo-3101522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "nombre": "TechnoSphere",
       "descripcion": "Explora la intersección entre la música electrónica y la tecnología en TechnoSphere. Con actuaciones innovadoras y experiencias audiovisuales futuristas, ¡este festival te llevará a otro nivel!",
-      "categoria": "Techno",
+      "categoria": "Electronica",
       "precio": 80,
       "destacado": false
     },
@@ -179,6 +179,60 @@
       "categoria": "Clásica",
       "precio": 55,
       "destacado": false
+    },
+    {
+      "id": 11,
+      "nombre": "Festival del Sol",
+      "imagen": "https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "descripcion": "¡Únete a nosotros para celebrar el verano con la mejor música bajo el sol! Disfruta de tres días de actuaciones en vivo de artistas de renombre internacional.",
+      "categoria": "Indie",
+      "precio": 150,
+      "destacado": false
+    },
+    {
+      "id": 12,
+      "nombre": "Electro Nation",
+      "imagen": "https://images.pexels.com/photos/213207/pexels-photo-213207.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "descripcion": "¡La fiesta electrónica más grande del año! Sumérgete en un mundo de ritmos vibrantes y luces brillantes con DJs de fama mundial en este festival de música electrónica de tres días.",
+      "categoria": "Electrónica",
+      "precio": 200,
+      "destacado": true
+    },
+    {
+      "id": 13,
+      "nombre": "FolkFiesta",
+      "imagen": "https://images.pexels.com/photos/3696395/pexels-photo-3696395.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "descripcion": "Experimenta la auténtica música folk de todo el mundo en este festival lleno de energía y cultura. Disfruta de actuaciones en vivo, talleres y comida tradicional durante dos días inolvidables.",
+      "categoria": "Folk",
+      "precio": 100,
+      "destacado": false
+    },
+    {
+      "id": 14,
+      "imagen": "https://images.pexels.com/photos/3696395/pexels-photo-3696395.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Hip Hop Jam",
+      "descripcion": "¡Prepárate para moverte al ritmo de los beats más frescos y las rimas más afiladas! Hip Hop Jam reúne a los mejores artistas de la escena hip hop para una noche inolvidable.",
+      "categoria": "Hip Hop",
+      "precio": 75,
+      "destacado": true
+    },
+    {
+      "id": 15,
+      "imagen": "https://images.pexels.com/photos/164693/pexels-photo-164693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Rock Revolution",
+      "descripcion": "¡Un festival para los amantes del rock! Rock Revolution presenta una alineación explosiva de bandas legendarias y nuevas promesas del rock. ¡No te lo pierdas!",
+      "categoria": "Rock",
+      "precio": 90,
+      "destacado": false
+    },
+    {
+      "id": 16,
+      "imagen": "https://images.pexels.com/photos/625644/pexels-photo-625644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Electro Dream",
+      "descripcion": "¡La fiesta electrónica más grande del año! Sumérgete en un mundo de ritmos vibrantes y luces brillantes con DJs de fama mundial en este festival de música electrónica de tres días.",
+      "categoria": "Electrónica",
+      "precio": 120,
+      "destacado": true
     }
   ]
 }

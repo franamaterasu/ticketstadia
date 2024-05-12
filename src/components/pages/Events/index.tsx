@@ -15,6 +15,8 @@ const Events = () => {
 
   const categoriesMap = festsData.data.map((fest: Fest) => fest.categoria);
 
+  const cleanedCategories = Array.from(new Set(categoriesMap));
+
   const lastEventIndex = currentPage * eventsPerPage;
 
   const firstEventIndex = lastEventIndex - eventsPerPage;
@@ -41,7 +43,7 @@ const Events = () => {
   };
 
   useEffect(() => {
-    setCategories(categoriesMap);
+    setCategories(cleanedCategories);
   }, [festsData.data]);
 
   return (
