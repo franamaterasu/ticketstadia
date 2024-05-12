@@ -9,6 +9,7 @@ import store from './store/';
 import EventDetail from './pages/EventDetail';
 import FavoriteEvents from './pages/FavoriteEvents';
 import Friends from './pages/Friends';
+import AuthenticationGuard from './components/AuthenticationGuard';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
@@ -26,23 +27,23 @@ function App() {
             />
             <Route
               path='/profile'
-              element={<Profile />}>
+              element={<AuthenticationGuard component={Profile} />}>
               <Route
                 path='events'
-                element={<FavoriteEvents />}
+                element={<AuthenticationGuard component={FavoriteEvents} />}
               />
               <Route
                 path='friends'
-                element={<Friends />}
+                element={<AuthenticationGuard component={Friends} />}
               />
             </Route>
             <Route
               path='/events'
-              element={<Events />}
+              element={<AuthenticationGuard component={Events} />}
             />
             <Route
               path='/event/:eventId'
-              element={<EventDetail />}
+              element={<AuthenticationGuard component={EventDetail} />}
             />
           </Routes>
         </section>
