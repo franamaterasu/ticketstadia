@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Fest } from '../../../types';
 import Card from '../../Card';
 import useFetch from '../../hooks/useFetch';
+import Pagination from '../../Pagination';
 
 const Events = () => {
   const [search, setSearch] = useState('');
@@ -9,19 +10,12 @@ const Events = () => {
   const [sortValue, setSortValue] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
-  const [eventsPerPage, setEventsPerPage] = useState(8);
 
   const festsData = useFetch('http://localhost:3000/festivales');
 
   const categoriesMap = festsData.data.map((fest: Fest) => fest.categoria);
 
   const cleanedCategories = Array.from(new Set(categoriesMap));
-
-  const lastEventIndex = currentPage * eventsPerPage;
-
-  const firstEventIndex = lastEventIndex - eventsPerPage;
-
-  const totalPages = Math.ceil(festsData.data.length / eventsPerPage);
 
   const festsfilter = () => {
     return festsData.data
@@ -40,6 +34,18 @@ const Events = () => {
           (selectedCategory === 'all' || fest.categoria === selectedCategory)
         );
       });
+  };
+
+  const eventsPerPage = 8;
+
+  const indexOfLastItem = currentPage * eventsPerPage;
+
+  const indexOfFirstItem = indexOfLastItem - eventsPerPage;
+
+  const currentItems = festsfilter().slice(indexOfFirstItem, indexOfLastItem);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
   };
 
   useEffect(() => {
@@ -89,29 +95,18 @@ const Events = () => {
       </section>
       <section className='container mx-auto pb-5'>
         <ul className='grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-          {festsfilter()
-            .map((fest: Fest) => (
-              <li key={fest.id}>
-                <Card info={fest} />
-              </li>
-            ))
-            .slice(firstEventIndex, lastEventIndex)}
+          {currentItems.map((fest: Fest) => (
+            <li key={fest.id}>
+              <Card info={fest} />
+            </li>
+          ))}
         </ul>
       </section>
-      <section className='container mx-auto flex gap-10 justify-center mt-10 pb-10'>
-        <button
-          className='bg-blue-500 text-white font-bold py-2 px-10 rounded disabled:opacity-50'
-          onClick={() => setCurrentPage(currentPage - 1)}
-          disabled={currentPage === 1}>
-          Anterior
-        </button>
-        <button
-          className='bg-blue-500 text-white font-bold py-2 px-10 rounded disabled:opacity-50'
-          onClick={() => setCurrentPage(currentPage + 1)}
-          disabled={currentPage === totalPages || festsfilter().length < 8}>
-          Siguiente
-        </button>
-      </section>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={Math.ceil(festsfilter().length / eventsPerPage)}
+        onPageChange={handlePageChange}
+      />
     </>
   );
 };

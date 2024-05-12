@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Provider store={store}>
         <Header />
-        <section className='bg-slate-100'>
+        <section className='bg-slate-100 min-h-[calc(100vh-72px)]'>
           <Routes>
             <Route
               path='/'
