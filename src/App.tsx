@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import store from './store/';
 import EventDetail from './pages/EventDetail';
 import FavoriteEvents from './pages/FavoriteEvents';
-import Friends from './pages/Friends';
+import FavoriteFriends from './pages/FavoriteFriends';
 import AuthenticationGuard from './components/AuthenticationGuard';
 import { useAuth0 } from '@auth0/auth0-react';
 
@@ -34,7 +34,7 @@ function App() {
               />
               <Route
                 path='friends'
-                element={<AuthenticationGuard component={Friends} />}
+                element={<AuthenticationGuard component={FavoriteFriends} />}
               />
             </Route>
             <Route

@@ -17,4 +17,5 @@ export type Fest = {
   destacado: boolean;
 };
 
+// Type Generico que se utiliza en useFetch para tipar la data que extraemos de cualquier API
 export type Data = { [key: string]: any };

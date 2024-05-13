@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <section className='container mx-auto py-10 lg:grid lg:grid-rows-2'>
-      <div className='bg-white rounded-md mb-10 lg:mr-10 lg:col-span-3 lg:row-span-2'>
+      <div className='bg-white rounded-md mb-10 lg:mr-10 lg:col-span-3 lg:row-span-2 max-w-5xl'>
         <CarouselEvents />
       </div>
       <div className='bg-white p-10 rounded-md mb-10 lg:row-span-2 lg:col-start-4'>
