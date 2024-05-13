@@ -9,15 +9,22 @@ import { FaMusic } from 'react-icons/fa6';
 const Events = () => {
   const [search, setSearch] = useState('');
   const [categories, setCategories] = useState([]);
+  const [date, setDate] = useState();
+  const [cities, setCities] = useState([]);
   const [sortValue, setSortValue] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCity, setSelectedCity] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
 
   const festsData = useFetch('http://localhost:3000/festivales');
 
   const categoriesMap = festsData.data.map((fest: Fest) => fest.categoria);
 
+  const citiesMap = festsData.data.map((fest: Fest) => fest.ciudad);
+
   const cleanedCategories = Array.from(new Set(categoriesMap));
+
+  const cleanedCities = Array.from(new Set(citiesMap));
 
   const festsfilter = () => {
     return festsData.data
@@ -32,9 +39,14 @@ const Events = () => {
       )
       .filter((fest: Fest) => {
         return (
-          fest.nombre.toLowerCase().includes(search.toLowerCase()) &&
-          (selectedCategory === 'all' || fest.categoria === selectedCategory)
+          selectedCategory === 'all' || fest.categoria === selectedCategory
         );
+      })
+      .filter((fest: Fest) => {
+        return fest.nombre.toLowerCase().includes(search.toLowerCase());
+      })
+      .filter((fest: Fest) => {
+        return selectedCity === 'all' || fest.ciudad === selectedCity;
       });
   };
 
@@ -52,53 +64,75 @@ const Events = () => {
 
   useEffect(() => {
     setCategories(cleanedCategories);
+    setCities(cleanedCities);
   }, [festsData.data]);
 
   return (
     <>
-      <section className='bg-gray-700 py-5 mb-10 xl:mb-0'>
-        <section className='container mx-auto flex justify-between items-center'>
+      <section className='bg-gray-700 py-10 mb-10 xl:mb-0'>
+        <section className='container mx-auto grid gap-8 md:grid md:grid-cols-2 lg:grid-cols-4'>
           <input
             type='text'
             placeholder='Busca tu concierto...'
-            className='w-1/3 border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+            className='w-full border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
             onChange={(e) => {
               setSearch(e.target.value);
               setCurrentPage(1);
             }}
           />
-          <div className='flex gap-5'>
-            <select
-              className='w-1/2 border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent xl:w-full'
-              onChange={(e) => setSortValue(e.target.value)}>
-              <option value='all'>Ordernar por:</option>
-              <option value='nombre'>Nombre</option>
-              <option value='precio'>Precio</option>
-            </select>
-            <select
-              className='w-1/2 border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent xl:hidden'
-              onChange={(e) => {
-                setSelectedCategory(e.target.value);
-                setCurrentPage(1);
-              }}>
-              <option value='all'>Selecciona un genero de musica</option>
-              {categories.map((category) => {
-                return (
-                  <option
-                    key={category}
-                    value={category}>
-                    {category}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
+          <select
+            className='w-full border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent xl:hidden'
+            onChange={(e) => {
+              setSelectedCategory(e.target.value);
+              setCurrentPage(1);
+            }}>
+            <option value='all'>Selecciona un genero de musica</option>
+            {categories.map((category) => {
+              return (
+                <option
+                  key={category}
+                  value={category}>
+                  {category}
+                </option>
+              );
+            })}
+          </select>
+          <select
+            className='w-full border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+            onChange={(e) => {
+              setSelectedCity(e.target.value);
+              setCurrentPage(1);
+            }}>
+            <option value='all'>Selecciona una ciudad</option>
+            {cities.map((city) => {
+              return (
+                <option
+                  key={city}
+                  value={city}>
+                  {city}
+                </option>
+              );
+            })}
+          </select>
+          <input
+            type='date'
+            className='w-full border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+          />
+          <select
+            className='w-full border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent xl:w-full'
+            onChange={(e) => setSortValue(e.target.value)}>
+            <option value='all'>Ordernar por:</option>
+            <option value='nombre'>Nombre</option>
+            <option value='precio'>Precio</option>
+          </select>
         </section>
       </section>
       <section className='hidden bg-gray-900 py-5 mb-5 xl:block'>
         <section className='container mx-auto flex gap-14 justify-around content-center'>
           <button
-            className='text-white font-light'
+            className={`font-light hover:text-red-500 ${
+              selectedCategory === 'all' ? 'text-red-500' : 'text-white'
+            }`}
             onClick={() => {
               setSelectedCategory('all');
               setCurrentPage(1);
@@ -109,7 +143,10 @@ const Events = () => {
           {categories.map((category) => {
             return (
               <button
-                className='text-white font-light'
+                key={category}
+                className={` font-light hover:text-red-500 ${
+                  selectedCategory === category ? 'text-red-500' : 'text-white'
+                }`}
                 onClick={() => {
                   setSelectedCategory(category);
                   setCurrentPage(1);

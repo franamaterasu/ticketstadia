@@ -6,7 +6,7 @@ type CarouselItemProps = {
 
 const CarouselItem = ({ fest }: CarouselItemProps) => {
   return (
-    <div className='relative bg-gray-600 hover:opacity-80'>
+    <div className='relative bg-gray-600 hover:opacity-80 rounded-md'>
       <img
         src={fest.imagen}
         alt={fest.nombre}

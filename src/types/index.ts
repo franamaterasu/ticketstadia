@@ -14,6 +14,8 @@ export type Fest = {
   descripcion: string;
   categoria: string;
   precio: number;
+  ciudad: string;
+  fecha: string;
   destacado: boolean;
 };
 

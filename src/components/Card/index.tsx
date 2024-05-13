@@ -33,7 +33,7 @@ const Card = ({ info }: CardProps) => {
   return (
     <div className='rounded shadow-lg w-full relative'>
       <img
-        className='w-full'
+        className='w-full rounded-t-md'
         src={imagen}
         alt={nombre}
         style={{ maxHeight: '180px' }}
@@ -41,7 +41,7 @@ const Card = ({ info }: CardProps) => {
       <span className='inline-block bg-blue-500 text-white text-md px-5 py-1 font-semibold rounded-full absolute right-5 top-5'>
         {precio}€
       </span>
-      <section className='p-6 bg-white'>
+      <section className='p-6 bg-white rounded-b-md'>
         <div className='mb-6'>
           <h4 className='font-bold text-xl mb-3'>{nombre}</h4>
           <p className='font-light'>{descripcion}</p>
