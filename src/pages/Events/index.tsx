@@ -6,6 +6,7 @@ import Pagination from '../../components/Pagination';
 import Alert from '../../components/Alert';
 import { FaMusic } from 'react-icons/fa6';
 import { useSearchParams } from 'react-router-dom';
+import Grid from '../../components/Grid';
 
 const Events = () => {
   const [search, setSearch] = useState('');
@@ -181,13 +182,13 @@ const Events = () => {
       <section className='container mx-auto pb-5'>
         {currentItems.length > 0 ? (
           <>
-            <ul className='grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+            <Grid>
               {currentItems.map((fest: Fest) => (
                 <li key={fest.id}>
                   <Card info={fest} />
                 </li>
               ))}
-            </ul>
+            </Grid>
             <Pagination
               currentPage={currentPage}
               totalPages={Math.ceil(festsfilter().length / eventsPerPage)}

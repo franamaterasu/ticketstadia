@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { Profile } from '../../types';
 import Person from '../../components/Person';
 import Alert from '../../components/Alert';
+import Grid from '../../components/Grid';
 
 const FavoriteFriends = () => {
   const { friends } = useSelector((state) => state.friends);
@@ -9,13 +10,13 @@ const FavoriteFriends = () => {
   return (
     <section>
       {friends.length > 0 ? (
-        <ul className='grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+        <Grid>
           {friends.map((friend: Profile) => (
             <li key={friend.id}>
               <Person info={friend} />
             </li>
           ))}
-        </ul>
+        </Grid>
       ) : (
         <Alert message='No tienes amigos en tu lista.' />
       )}
