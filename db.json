@@ -90,7 +90,7 @@
       "categoria": "Rock",
       "precio": 50,
       "ciudad": "Madrid",
-      "fecha": "25/9/2024",
+      "fecha": "2024-09-25",
       "destacado": false
     },
     {
@@ -101,7 +101,7 @@
       "categoria": "Electrónica",
       "precio": 70,
       "ciudad": "Barcelona",
-      "fecha": "1/9/2024",
+      "fecha": "2024-09-01",
       "destacado": true
     },
     {
@@ -112,7 +112,7 @@
       "categoria": "Jazz",
       "precio": 60,
       "ciudad": "Sevilla",
-      "fecha": "1/9/2024",
+      "fecha": "2024-09-01",
       "destacado": true
     },
     {
@@ -123,7 +123,7 @@
       "categoria": "Country",
       "precio": 55,
       "ciudad": "Madrid",
-      "fecha": "25/9/2024",
+      "fecha": "2024-09-25",
       "destacado": true
     },
     {
@@ -134,7 +134,7 @@
       "categoria": "Indie",
       "precio": 65,
       "ciudad": "Barcelona",
-      "fecha": "13/9/2024",
+      "fecha": "2024-09-13",
       "destacado": false
     },
     {
@@ -145,7 +145,7 @@
       "categoria": "Hip Hop",
       "precio": 75,
       "ciudad": "Sevilla",
-      "fecha": "6/9/2024",
+      "fecha": "2024-09-06",
       "destacado": true
     },
     {
@@ -156,7 +156,7 @@
       "categoria": "Reggae",
       "precio": 60,
       "ciudad": "Madrid",
-      "fecha": "14/9/2024",
+      "fecha": "2024-09-14",
       "destacado": false
     },
     {
@@ -167,7 +167,7 @@
       "categoria": "Latin",
       "precio": 70,
       "ciudad": "Barcelona",
-      "fecha": "28/9/2024",
+      "fecha": "2024-09-28",
       "destacado": false
     },
     {
@@ -178,7 +178,7 @@
       "categoria": "Electrónica",
       "precio": 80,
       "ciudad": "Sevilla",
-      "fecha": "1/9/2024",
+      "fecha": "2024-09-01",
       "destacado": false
     },
     {
@@ -189,7 +189,7 @@
       "categoria": "Clásica",
       "precio": 55,
       "ciudad": "Madrid",
-      "fecha": "12/9/2024",
+      "fecha": "2024-09-12",
       "destacado": false
     },
     {
@@ -200,7 +200,7 @@
       "categoria": "Indie",
       "precio": 150,
       "ciudad": "Barcelona",
-      "fecha": "23/9/2024",
+      "fecha": "2024-09-23",
       "destacado": false
     },
     {
@@ -211,7 +211,7 @@
       "categoria": "Electrónica",
       "precio": 200,
       "ciudad": "Sevilla",
-      "fecha": "21/9/2024",
+      "fecha": "2024-09-21",
       "destacado": true
     },
     {
@@ -222,7 +222,7 @@
       "categoria": "Folk",
       "precio": 100,
       "ciudad": "Madrid",
-      "fecha": "2/9/2024",
+      "fecha": "2024-09-02",
       "destacado": false
     },
     {
@@ -233,7 +233,7 @@
       "categoria": "Hip Hop",
       "precio": 75,
       "ciudad": "Barcelona",
-      "fecha": "28/9/2024",
+      "fecha": "2024-09-28",
       "destacado": true
     },
     {
@@ -244,7 +244,7 @@
       "categoria": "Rock",
       "precio": 90,
       "ciudad": "Sevilla",
-      "fecha": "10/9/2024",
+      "fecha": "2024-09-10",
       "destacado": false
     },
     {
@@ -255,7 +255,7 @@
       "categoria": "Electrónica",
       "precio": 120,
       "ciudad": "Madrid",
-      "fecha": "8/9/2024",
+      "fecha": "2024-09-08",
       "destacado": true
     }
   ]

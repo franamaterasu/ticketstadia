@@ -5,16 +5,20 @@ import useFetch from '../../components/hooks/useFetch';
 import Pagination from '../../components/Pagination';
 import Alert from '../../components/Alert';
 import { FaMusic } from 'react-icons/fa6';
+import { useSearchParams } from 'react-router-dom';
 
 const Events = () => {
   const [search, setSearch] = useState('');
   const [categories, setCategories] = useState([]);
-  const [date, setDate] = useState();
+  const [selectedDate, setSelectedDate] = useState('');
   const [cities, setCities] = useState([]);
   const [sortValue, setSortValue] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedCity, setSelectedCity] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const categoryFilter = searchParams.get('category');
 
   const festsData = useFetch('http://localhost:3000/festivales');
 
@@ -47,8 +51,23 @@ const Events = () => {
       })
       .filter((fest: Fest) => {
         return selectedCity === 'all' || fest.ciudad === selectedCity;
+      })
+      .filter((fest: Fest) => {
+        return selectedDate === '' || fest.fecha === selectedDate;
       });
   };
+
+  /*
+      .filter((fest: Fest) => {
+        const test = categoryFilter
+          ? festsData.data.filter(
+              (fest) => fest.categoria.toLowerCase() === categoryFilter
+            )
+          : festsData.data;
+
+        console.log(test);
+      });
+      */
 
   const eventsPerPage = 8;
 
@@ -117,6 +136,7 @@ const Events = () => {
           <input
             type='date'
             className='w-full border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+            onChange={(e) => setSelectedDate(e.target.value)}
           />
           <select
             className='w-full border font-light rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent xl:w-full'
