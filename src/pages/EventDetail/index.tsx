@@ -6,6 +6,7 @@ import {
   FaCalendarDays,
 } from 'react-icons/fa6';
 import useFetch from '../../components/hooks/useFetch';
+import PayButton from '../../components/PayButton';
 
 const EventDetail = () => {
   const { eventId } = useParams();
@@ -39,6 +40,12 @@ const EventDetail = () => {
                 error in eligendi quis impedit consequatur incidunt natus hic
                 cupiditate totam.
               </p>
+              <section className='w-1/2 mt-14 lg:w-1/3 lg:mt-10'>
+                <PayButton
+                  value={precio}
+                  invoice={`Compra de ticker para ${nombre}`}
+                />
+              </section>
             </div>
           </section>
         </section>
