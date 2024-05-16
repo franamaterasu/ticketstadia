@@ -1,66 +1,36 @@
-import { useState } from 'react';
 import { Fest } from '../../types';
 import Card from '../../components/Card';
-import useFetch from '../../components/hooks/useFetch';
+
 import Pagination from '../../components/Pagination';
 import Alert from '../../components/Alert';
 import { FaMusic } from 'react-icons/fa6';
 import Grid from '../../components/Grid';
 import { getCategories } from '../../helpers/getCategories';
 import { getCities } from '../../helpers/getCities';
+import useFilter from '../../components/hooks/useFilter';
+import useFetch from '../../components/hooks/useFetch';
 
 const Events = () => {
-  const [search, setSearch] = useState('');
-  const [selectedDate, setSelectedDate] = useState('');
-  const [sortValue, setSortValue] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedCity, setSelectedCity] = useState('all');
-  const [currentPage, setCurrentPage] = useState(1);
+  const fest = useFetch('http://localhost:3000/festivales/');
 
-  const festsData = useFetch('http://localhost:3000/festivales');
+  const {
+    setSearch,
+    setSelectedDate,
+    setSortValue,
+    setSelectedCategory,
+    setSelectedCity,
+    setCurrentPage,
+    currentItems,
+    handlePageChange,
+    selectedCategory,
+    currentPage,
+    eventsPerPage,
+    arrayFiltered,
+  } = useFilter(fest.data);
 
   const { categorias } = getCategories();
 
   const { ciudades } = getCities();
-
-  const festsfilter = () => {
-    return festsData.data
-      .sort(
-        (a: { [value: string]: number }, b: { [value: string]: number }) => {
-          if (a[sortValue] > b[sortValue]) {
-            return 1;
-          } else {
-            return -1;
-          }
-        }
-      )
-      .filter((fest: Fest) => {
-        return (
-          selectedCategory === 'all' || fest.categoria === selectedCategory
-        );
-      })
-      .filter((fest: Fest) => {
-        return fest.nombre.toLowerCase().includes(search.toLowerCase());
-      })
-      .filter((fest: Fest) => {
-        return selectedCity === 'all' || fest.ciudad === selectedCity;
-      })
-      .filter((fest: Fest) => {
-        return selectedDate === '' || fest.fecha === selectedDate;
-      });
-  };
-
-  const eventsPerPage = 8;
-
-  const indexOfLastItem = currentPage * eventsPerPage;
-
-  const indexOfFirstItem = indexOfLastItem - eventsPerPage;
-
-  const currentItems = festsfilter().slice(indexOfFirstItem, indexOfLastItem);
-
-  const handlePageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-  };
 
   return (
     <>
@@ -166,7 +136,7 @@ const Events = () => {
             </Grid>
             <Pagination
               currentPage={currentPage}
-              totalPages={Math.ceil(festsfilter().length / eventsPerPage)}
+              totalPages={Math.ceil(arrayFiltered().length / eventsPerPage)}
               onPageChange={handlePageChange}
             />
           </>
