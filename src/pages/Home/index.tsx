@@ -5,11 +5,28 @@ import { Fest, Profile } from '../../types';
 import CarouselEvents from '../../components/Carousel';
 import Grid from '../../components/Grid';
 import Person from '../../components/Person';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const Home = () => {
   const fests = useFetch('http://localhost:3000/festivales');
 
   const users = useFetch('http://localhost:3000/listaDePersonas');
+
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
 
   return (
     <>
@@ -34,19 +51,22 @@ const Home = () => {
           </Grid>
         </section>
       </div>
-      <section className='bg-gray-900 p-10'>
+      <section className='bg-gray-900 p-10 px-0'>
         <div className='container mx-auto'>
           <h3 className='text-white font-bold mb-10'>
             Gente con las que compartir conciertos:
           </h3>
-          <Grid>
-            {users.data.slice(0, 4).map((friend: Profile) => (
-              <li key={friend.id}>
-                <Person info={friend} />
-              </li>
-            ))}
-          </Grid>
         </div>
+        <Carousel
+          responsive={responsive}
+          infinite={true}
+          itemClass='mr-5 last:mr-0'>
+          {users.data.map((friend: Profile) => (
+            <div key={friend.id}>
+              <Person info={friend} />
+            </div>
+          ))}
+        </Carousel>
       </section>
       <section className=' bg-white p-10'>
         <div className='container mx-auto'>
