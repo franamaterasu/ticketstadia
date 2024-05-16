@@ -34,7 +34,7 @@ const Events = () => {
 
   return (
     <>
-      <section className='bg-gray-700 py-10 mb-10 xl:mb-0'>
+      <section className='bg-gray-700 p-10 mb-10 xl:mb-0'>
         <section className='container mx-auto grid gap-8 md:grid md:grid-cols-2 lg:grid-cols-4'>
           <input
             type='text'
@@ -93,7 +93,7 @@ const Events = () => {
           </select>
         </section>
       </section>
-      <section className='hidden bg-gray-900 py-5 mb-5 xl:block'>
+      <section className='hidden bg-gray-900 py-10 mb-5 pb-5 xl:block'>
         <section className='container mx-auto flex gap-14 justify-around content-center'>
           <button
             className={`font-light hover:text-red-500 ${
@@ -124,7 +124,7 @@ const Events = () => {
           })}
         </section>
       </section>
-      <section className='container mx-auto pb-5'>
+      <section className='container mx-auto'>
         {currentItems.length > 0 ? (
           <>
             <Grid>

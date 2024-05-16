@@ -85,7 +85,7 @@ const Home = () => {
             </Link>
           </header>
           <Grid>
-            {fests.data.slice(0, 8).map((fest: Fest) => (
+            {fests.data.slice(8, 16).map((fest: Fest) => (
               <li key={fest.id}>
                 <Card info={fest} />
               </li>

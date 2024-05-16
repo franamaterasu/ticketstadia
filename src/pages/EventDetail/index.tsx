@@ -1,4 +1,6 @@
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addEvent } from '../../store/reducers/cartSlice';
 import {
   FaMusic,
   FaMoneyBillWave,
@@ -7,13 +9,20 @@ import {
 } from 'react-icons/fa6';
 import useFetch from '../../components/hooks/useFetch';
 import PayButton from '../../components/PayButton';
+import { Fest } from '../../types';
 
 const EventDetail = () => {
   const { eventId } = useParams();
 
+  const dispatch = useDispatch();
+
   const fest = useFetch(`http://localhost:3000/festivales/${eventId}`);
 
   const { imagen, nombre, categoria, precio, ciudad, fecha } = fest.data;
+
+  const handleAddClick = (fest: Fest) => {
+    dispatch(addEvent(fest));
+  };
 
   return (
     <>
@@ -76,7 +85,8 @@ const EventDetail = () => {
                   />
                   <button
                     style={{ maxHeight: '46px' }}
-                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                    onClick={() => handleAddClick(fest.data)}>
                     Agregar al carrito
                   </button>
                 </section>
