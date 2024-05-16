@@ -12,7 +12,7 @@ const Profile = () => {
 
   return (
     <>
-      <section className='container mx-auto py-10 text-center'>
+      <section className='py-10 text-center bg-white'>
         <ImageProfile
           image={picture}
           size={127}
@@ -28,7 +28,7 @@ const Profile = () => {
           <IoMdLogOut className='text-3xl  text-white' />
         </button>
       </section>
-      <section className='bg-white min-h-[calc(100vh-300px)]'>
+      <section>
         <section className='container mx-auto py-10'>
           <div className='mb-10 border-b-2 py-5 space-x-3'>
             <Link

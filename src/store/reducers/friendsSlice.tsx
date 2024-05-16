@@ -17,7 +17,7 @@ export const friendsSlice = createSlice({
 
       !friendExist
         ? (state.friends = [...state.friends, newFriend])
-        : alert('El evento ya existe en tu lista');
+        : alert(`${newFriend.nombre} ya esta en tu lista de amigos`);
     },
 
     deleteFriend: (state, action) => {

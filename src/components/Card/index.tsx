@@ -32,13 +32,18 @@ const Card = ({ info }: CardProps) => {
 
   return (
     <div className='rounded shadow-lg w-full relative'>
-      <img
-        className='w-full rounded-t-md'
-        src={imagen}
-        alt={nombre}
-        style={{ maxHeight: '180px' }}
-      />
-      <span className='inline-block bg-blue-500 text-white text-md px-5 py-1 font-semibold rounded-full absolute right-5 top-5'>
+      <Link to={`/event/${info.id}`}>
+        <img
+          className='w-full rounded-t-md'
+          src={imagen}
+          alt={nombre}
+          style={{ maxHeight: '180px' }}
+        />
+      </Link>
+      <span className='bg-blue-500 text-white text-md px-5 py-1 font-semibold rounded-full absolute left-5 top-5'>
+        {categoria}
+      </span>
+      <span className='bg-blue-500 text-white text-md px-5 py-1 font-semibold rounded-full absolute right-5 top-5'>
         {precio}€
       </span>
       <section className='p-6 bg-white rounded-b-md'>
@@ -47,25 +52,20 @@ const Card = ({ info }: CardProps) => {
           <p className='font-light'>{descripcion}</p>
         </div>
         <div className='flex items-center justify-between'>
-          <span className='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
-            {categoria}
-          </span>
           <div className='flex items-center gap-3'>
-            <Link to={`/event/${info.id}`}>
-              <FaEye className='text-green-500 text-3xl' />
-            </Link>
             {!eventExist && (
-              <MdFavorite
-                className='text-red-500 text-3xl'
-                onClick={() => handleAddClick(info)}
-              />
+              <button
+                className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                onClick={() => handleAddClick(info)}>
+                Quiero asistir
+              </button>
             )}
-
             {eventExist && location.pathname === '/profile/events' && (
-              <MdDelete
-                className='text-red-500 text-3xl'
-                onClick={() => handleDeleteClick(info.id)}
-              />
+              <button
+                className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4'
+                onClick={() => handleDeleteClick(info.id)}>
+                Eliminar evento
+              </button>
             )}
           </div>
         </div>

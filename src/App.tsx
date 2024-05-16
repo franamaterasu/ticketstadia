@@ -19,7 +19,7 @@ function App() {
     <BrowserRouter>
       <Provider store={store}>
         {isAuthenticated && <Header />}
-        <section className='bg-slate-100'>
+        <section>
           <Routes>
             <Route
               path='/'
