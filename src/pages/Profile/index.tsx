@@ -47,6 +47,13 @@ const Profile = () => {
               }`}>
               Amigos
             </Link>
+            <Link
+              to='cart'
+              className={`font-light ${
+                location.pathname === '/profile/cart' ? 'text-blue-500' : null
+              }`}>
+              Carrito
+            </Link>
           </div>
 
           <Outlet />

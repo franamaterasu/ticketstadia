@@ -12,6 +12,7 @@ import FavoriteFriends from './pages/FavoriteFriends';
 import Category from './pages/Category';
 import AuthenticationGuard from './components/AuthenticationGuard';
 import { useAuth0 } from '@auth0/auth0-react';
+import Cart from './pages/Cart';
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -36,6 +37,10 @@ function App() {
               <Route
                 path='friends'
                 element={<AuthenticationGuard component={FavoriteFriends} />}
+              />
+              <Route
+                path='cart'
+                element={<AuthenticationGuard component={Cart} />}
               />
             </Route>
             <Route

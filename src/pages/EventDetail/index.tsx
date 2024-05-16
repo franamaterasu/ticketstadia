@@ -40,11 +40,16 @@ const EventDetail = () => {
                 error in eligendi quis impedit consequatur incidunt natus hic
                 cupiditate totam.
               </p>
-              <section className='w-1/2 mt-14 lg:w-1/3 lg:mt-10'>
+              <section className='flex gap-5 mt-10'>
                 <PayButton
                   value={precio}
                   invoice={`Compra de ticker para ${nombre}`}
                 />
+                <button
+                  style={{ maxHeight: '46px' }}
+                  className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+                  Agregar al carrito
+                </button>
               </section>
             </div>
           </section>
