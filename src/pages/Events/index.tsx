@@ -58,18 +58,6 @@ const Events = () => {
       });
   };
 
-  /*
-      .filter((fest: Fest) => {
-        const test = categoryFilter
-          ? festsData.data.filter(
-              (fest) => fest.categoria.toLowerCase() === categoryFilter
-            )
-          : festsData.data;
-
-        console.log(test);
-      });
-      */
-
   const eventsPerPage = 8;
 
   const indexOfLastItem = currentPage * eventsPerPage;

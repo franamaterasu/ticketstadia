@@ -8,11 +8,12 @@ import Person from '../../components/Person';
 
 const Home = () => {
   const fests = useFetch('http://localhost:3000/festivales');
+
   const users = useFetch('http://localhost:3000/listaDePersonas');
 
   return (
     <>
-      <section className='banner py-10'>
+      <section className='banner p-10'>
         <div className='container mx-auto'>
           <CarouselEvents />
         </div>
@@ -33,7 +34,7 @@ const Home = () => {
           </Grid>
         </section>
       </div>
-      <section className='bg-gray-900 py-10'>
+      <section className='bg-gray-900 p-10'>
         <div className='container mx-auto'>
           <h3 className='text-white font-bold mb-10'>
             Gente con las que compartir conciertos:

@@ -1,6 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { MdFavorite, MdDelete } from 'react-icons/md';
-import { FaEye } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 import { addEvent, deleteEvent } from '../../store/reducers/eventsSlice';
 import { Fest } from '../../types';
@@ -17,7 +15,7 @@ const Card = ({ info }: CardProps) => {
   const { events } = useSelector((state) => state.events);
 
   const eventExist = events.some(
-    (favoriteEvent) => favoriteEvent.id === info.id
+    (favoriteEvent: Fest) => favoriteEvent.id === info.id
   );
 
   const dispatch = useDispatch();

@@ -1,28 +1,80 @@
+import { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import ImageProfile from '../ImageProfile';
+import useFetch from '../hooks/useFetch';
+import { Fest } from '../../types';
 
 const Header = () => {
+  const [isOpened, setIsOpened] = useState(false);
+
   const { user } = useAuth0();
 
-  const { picture } = user;
+  const picture = user?.picture;
+
+  const fests = useFetch('http://localhost:3000/festivales');
+
+  const categorias = fests.data.map((item: Fest) => item.categoria);
+
+  const cleanedCategories = Array.from(new Set(categorias));
+
+  const location = useLocation();
+
+  console.log(location.pathname);
 
   return (
     <header className='bg-gray-900 text-white py-4 px-5'>
       <div className='container mx-auto flex justify-between items-center'>
-        <div className='flex items-center'>
+        <Link
+          to='/'
+          className='text-xl font-bold'
+          onClick={() => setIsOpened(false)}>
+          Ticketstadia
+        </Link>
+
+        <nav className='flex gap-10 items-center'>
           <Link
             to='/'
-            className='text-xl font-bold'>
-            Ticketstadia
+            className={` text-md ${
+              location.pathname === '/' ? 'text-red-500' : 'text-white'
+            }`}
+            onClick={() => setIsOpened(false)}>
+            Home
           </Link>
-        </div>
-        <Link to='/profile/events'>
-          <ImageProfile
-            image={picture}
-            size={40}
-          />
-        </Link>
+          <div className='relative'>
+            <span
+              className={`text-white text-md cursor-pointer`}
+              onClick={() => setIsOpened(!isOpened)}>
+              Categorias
+            </span>
+            {isOpened && (
+              <section className='flex flex-col bg-white rounded-md absolute left-0 top-10 z-10 shadow-md border border-slate-500'>
+                {cleanedCategories.map((categoria) => {
+                  return (
+                    <Link
+                      key={categoria}
+                      className={`px-3 py-2 hover:text-white hover:bg-slate-300 ${
+                        location.pathname ===
+                        `/category/${categoria}`.toLowerCase()
+                          ? 'bg-slate-300 text-white'
+                          : 'text-black'
+                      }`}
+                      to={`/category/${categoria}`.toLowerCase()}
+                      onClick={() => setIsOpened(false)}>
+                      {categoria}
+                    </Link>
+                  );
+                })}
+              </section>
+            )}
+          </div>
+          <Link to='/profile/events'>
+            <ImageProfile
+              image={picture}
+              size={40}
+            />
+          </Link>
+        </nav>
       </div>
     </header>
   );

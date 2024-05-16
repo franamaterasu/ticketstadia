@@ -1,5 +1,5 @@
 type ImageProfileProps = {
-  image: string;
+  image: string | undefined;
   size: number;
   classNames?: string;
 };
