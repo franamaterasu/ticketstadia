@@ -39,10 +39,10 @@ const Person = ({ info }: PersonProps) => {
       </div>
       <div className='text-center bg-white py-10 rounded-b-lg'>
         <h3 className='text-xl font-semibold'>{nombre}</h3>
-        <p className='font-light mb-2'>{email}</p>
+        <p className='font-light mb-5'>{email}</p>
         {!friendExist && (
           <button
-            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4'
+            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
             onClick={() => handleAddClick(info)}>
             Agregar amigo
           </button>
@@ -50,7 +50,7 @@ const Person = ({ info }: PersonProps) => {
 
         {location.pathname !== '/' && (
           <button
-            className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4'
+            className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'
             onClick={() => handleDeleteClick(info.id)}>
             Eliminar amigo
           </button>

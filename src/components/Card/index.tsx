@@ -47,28 +47,24 @@ const Card = ({ info }: CardProps) => {
         {precio}€
       </span>
       <section className='p-6 bg-white rounded-b-md'>
-        <div className='mb-6'>
+        <div className='mb-4'>
           <h4 className='font-bold text-xl mb-3'>{nombre}</h4>
           <p className='font-light'>{descripcion}</p>
         </div>
-        <div className='flex items-center justify-between'>
-          <div className='flex items-center gap-3'>
-            {!eventExist && (
-              <button
-                className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-                onClick={() => handleAddClick(info)}>
-                Quiero asistir
-              </button>
-            )}
-            {eventExist && location.pathname === '/profile/events' && (
-              <button
-                className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4'
-                onClick={() => handleDeleteClick(info.id)}>
-                Eliminar evento
-              </button>
-            )}
-          </div>
-        </div>
+        {!eventExist && (
+          <button
+            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+            onClick={() => handleAddClick(info)}>
+            Quiero asistir
+          </button>
+        )}
+        {eventExist && location.pathname === '/profile/events' && (
+          <button
+            className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'
+            onClick={() => handleDeleteClick(info.id)}>
+            Eliminar evento
+          </button>
+        )}
       </section>
     </div>
   );
