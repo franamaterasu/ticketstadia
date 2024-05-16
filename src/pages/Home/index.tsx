@@ -14,12 +14,16 @@ const Home = () => {
   const users = useFetch('http://localhost:3000/listaDePersonas');
 
   const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4,
+    xlDesktop: {
+      breakpoint: { max: 3000, min: 1200 },
+      items: 5,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1200, min: 768 },
+      items: 3,
+    },
+    minitablet: {
+      breakpoint: { max: 768, min: 464 },
       items: 2,
     },
     mobile: {
@@ -51,7 +55,7 @@ const Home = () => {
           </Grid>
         </section>
       </div>
-      <section className='bg-gray-900 p-10 px-0'>
+      <section className='bg-gray-900 p-10'>
         <div className='container mx-auto'>
           <h3 className='text-white font-bold mb-10'>
             Gente con las que compartir conciertos:
