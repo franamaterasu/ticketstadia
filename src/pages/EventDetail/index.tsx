@@ -17,62 +17,72 @@ const EventDetail = () => {
 
   return (
     <>
-      <section className='container mx-auto py-10'>
-        <h3 className='text-5xl mb-10 font-bold'>{nombre}</h3>
-        <section className='lg:flex gap-10'>
-          <img
-            src={imagen}
-            className='rounded-md mb-10 lg:w-1/2 lg:max-w-2xl'
-          />
-          <section>
-            <div className='mb-20'>
-              <h4 className='text-2xl font-bold mb-3'>Descripcion:</h4>
-              <p className='font-light'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-                officiis dolorum, error assumenda iste optio commodi
-                reprehenderit odio hic repellendus tempora, incidunt quod
-                corrupti maxime tenetur quia, veritatis et? Veniam dolorem hic
-                vel cupiditate voluptatum necessitatibus debitis, dolores
-                recusandae amet placeat consequatur a saepe excepturi quasi,
-                esse error quo modi vitae totam iste enim. Quos libero, officiis
-                expedita ea corrupti impedit a adipisci, rem iste error,
-                consectetur dolorem fuga nostrum ut odit earum assumenda! Quas
-                error in eligendi quis impedit consequatur incidunt natus hic
-                cupiditate totam.
-              </p>
-              <section className='flex gap-5 mt-10'>
-                <PayButton
-                  value={precio}
-                  invoice={`Compra de ticker para ${nombre}`}
-                />
-                <button
-                  style={{ maxHeight: '46px' }}
-                  className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
-                  Agregar al carrito
-                </button>
-              </section>
-            </div>
+      <section className='p-10'>
+        <div className='container mx-auto'>
+          <h3 className='text-5xl mb-10 font-bold'>{nombre}</h3>
+          <section className='lg:flex gap-10'>
+            <img
+              src={imagen}
+              className='rounded-md mb-10 lg:w-1/2 lg:max-w-2xl'
+            />
+            <section>
+              <div>
+                <h4 className='text-2xl font-bold mb-3'>Descripcion:</h4>
+                <p className='font-light'>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                  officiis dolorum, error assumenda iste optio commodi
+                  reprehenderit odio hic repellendus tempora, incidunt quod
+                  corrupti maxime tenetur quia, veritatis et? Veniam dolorem hic
+                  vel cupiditate voluptatum necessitatibus debitis, dolores
+                  recusandae amet placeat consequatur a saepe excepturi quasi,
+                  esse error quo modi vitae totam iste enim. Quos libero,
+                  officiis expedita ea corrupti impedit a adipisci, rem iste
+                  error, consectetur dolorem fuga nostrum ut odit earum
+                  assumenda! Quas error in eligendi quis impedit consequatur
+                  incidunt natus hic cupiditate totam.
+                </p>
+                <section className='bg-gray-700 py-10 my-10 rounded-md'>
+                  <div className='grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-14 xl:flex xl:justify-center lg:gap-24'>
+                    <div>
+                      <FaMusic className='mx-auto text-4xl text-white mb-3' />
+                      <p className='font-light text-1xl text-white text-center'>
+                        {categoria}
+                      </p>
+                    </div>
+                    <div>
+                      <FaMoneyBillWave className='mx-auto text-4xl text-white mb-3' />
+                      <p className='font-light text-1xl text-white text-center'>
+                        {precio}€
+                      </p>
+                    </div>
+                    <div>
+                      <FaMountainCity className='mx-auto text-4xl text-white mb-3' />
+                      <p className='font-light text-1xl text-white text-center'>
+                        {ciudad}
+                      </p>
+                    </div>
+                    <div>
+                      <FaCalendarDays className='mx-auto text-4xl text-white mb-3' />
+                      <p className='font-light text-1xl text-white text-center'>
+                        {fecha}
+                      </p>
+                    </div>
+                  </div>
+                </section>
+                <section className='flex gap-5 mt-10'>
+                  <PayButton
+                    value={precio}
+                    invoice={`Compra de ticker para ${nombre}`}
+                  />
+                  <button
+                    style={{ maxHeight: '46px' }}
+                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+                    Agregar al carrito
+                  </button>
+                </section>
+              </div>
+            </section>
           </section>
-        </section>
-      </section>
-      <section className='bg-gray-700 py-10'>
-        <div className='flex justify-center gap-32'>
-          <div>
-            <FaMusic className='mx-auto text-5xl text-white mb-3' />
-            <p className='font-light text-2xl text-white'>{categoria}</p>
-          </div>
-          <div>
-            <FaMoneyBillWave className='mx-auto text-5xl text-white mb-3' />
-            <p className='font-light text-2xl text-white'>{precio}€</p>
-          </div>
-          <div>
-            <FaMountainCity className='mx-auto text-5xl text-white mb-3' />
-            <p className='font-light text-2xl text-white'>{ciudad}</p>
-          </div>
-          <div>
-            <FaCalendarDays className='mx-auto text-5xl text-white mb-3' />
-            <p className='font-light text-2xl text-white'>{fecha}</p>
-          </div>
         </div>
       </section>
     </>

@@ -40,11 +40,13 @@ const Person = ({ info }: PersonProps) => {
       <div className='text-center bg-white py-10 rounded-b-lg'>
         <h3 className='text-xl font-semibold'>{nombre}</h3>
         <p className='font-light mb-5'>{email}</p>
-        {!friendExist && (
+
+        {location.pathname === '/' && (
           <button
-            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-blue-300'
+            disabled={friendExist}
             onClick={() => handleAddClick(info)}>
-            Agregar amigo
+            {friendExist ? 'Amigo agregado' : 'Agregar amigo'}
           </button>
         )}
 
