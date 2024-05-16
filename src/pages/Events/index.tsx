@@ -1,35 +1,27 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Fest } from '../../types';
 import Card from '../../components/Card';
 import useFetch from '../../components/hooks/useFetch';
 import Pagination from '../../components/Pagination';
 import Alert from '../../components/Alert';
 import { FaMusic } from 'react-icons/fa6';
-import { useSearchParams } from 'react-router-dom';
 import Grid from '../../components/Grid';
+import { getCategories } from '../../helpers/getCategories';
+import { getCities } from '../../helpers/getCities';
 
 const Events = () => {
   const [search, setSearch] = useState('');
-  const [categories, setCategories] = useState([]);
   const [selectedDate, setSelectedDate] = useState('');
-  const [cities, setCities] = useState([]);
   const [sortValue, setSortValue] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedCity, setSelectedCity] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const categoryFilter = searchParams.get('category');
 
   const festsData = useFetch('http://localhost:3000/festivales');
 
-  const categoriesMap = festsData.data.map((fest: Fest) => fest.categoria);
+  const { categorias } = getCategories();
 
-  const citiesMap = festsData.data.map((fest: Fest) => fest.ciudad);
-
-  const cleanedCategories = Array.from(new Set(categoriesMap));
-
-  const cleanedCities = Array.from(new Set(citiesMap));
+  const { ciudades } = getCities();
 
   const festsfilter = () => {
     return festsData.data
@@ -70,11 +62,6 @@ const Events = () => {
     setCurrentPage(pageNumber);
   };
 
-  useEffect(() => {
-    setCategories(cleanedCategories);
-    setCities(cleanedCities);
-  }, [festsData.data]);
-
   return (
     <>
       <section className='bg-gray-700 py-10 mb-10 xl:mb-0'>
@@ -95,7 +82,7 @@ const Events = () => {
               setCurrentPage(1);
             }}>
             <option value='all'>Selecciona un genero de musica</option>
-            {categories.map((category) => {
+            {categorias.map((category) => {
               return (
                 <option
                   key={category}
@@ -112,7 +99,7 @@ const Events = () => {
               setCurrentPage(1);
             }}>
             <option value='all'>Selecciona una ciudad</option>
-            {cities.map((city) => {
+            {ciudades.map((city) => {
               return (
                 <option
                   key={city}
@@ -149,7 +136,7 @@ const Events = () => {
             <FaMusic className='mx-auto text-3xl mb-3' />
             All
           </button>
-          {categories.map((category) => {
+          {categorias.map((category) => {
             return (
               <button
                 key={category}

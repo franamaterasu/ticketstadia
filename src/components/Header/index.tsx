@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Link, useLocation } from 'react-router-dom';
 import ImageProfile from '../ImageProfile';
-import useFetch from '../hooks/useFetch';
-import { Fest } from '../../types';
+import { getCategories } from '../../helpers/getCategories';
 
 const Header = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -12,15 +11,9 @@ const Header = () => {
 
   const picture = user?.picture;
 
-  const fests = useFetch('http://localhost:3000/festivales');
-
-  const categorias = fests.data.map((item: Fest) => item.categoria);
-
-  const cleanedCategories = Array.from(new Set(categorias));
+  const { categorias } = getCategories();
 
   const location = useLocation();
-
-  console.log(location.pathname);
 
   return (
     <header className='bg-gray-900 text-white py-4 px-5'>
@@ -49,7 +42,17 @@ const Header = () => {
             </span>
             {isOpened && (
               <section className='flex flex-col bg-white rounded-md absolute left-0 top-10 z-10 shadow-md border border-slate-500'>
-                {cleanedCategories.map((categoria) => {
+                <Link
+                  to='/events'
+                  onClick={() => setIsOpened(false)}
+                  className={`px-3 py-2 hover:text-white hover:bg-slate-300 ${
+                    location.pathname === '/events'
+                      ? 'bg-slate-300 text-white'
+                      : 'text-black'
+                  }`}>
+                  All
+                </Link>
+                {categorias.map((categoria) => {
                   return (
                     <Link
                       key={categoria}
@@ -68,7 +71,9 @@ const Header = () => {
               </section>
             )}
           </div>
-          <Link to='/profile/events'>
+          <Link
+            to='/profile/events'
+            onClick={() => setIsOpened(false)}>
             <ImageProfile
               image={picture}
               size={40}
