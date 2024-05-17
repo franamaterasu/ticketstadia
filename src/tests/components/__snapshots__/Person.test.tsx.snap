@@ -1,0 +1,38 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Person/> > should match with snapshot 1`] = `
+<div>
+  <div
+    class="w-full"
+  >
+    <div
+      class="bg-slate-500 py-5 rounded-t-lg"
+    >
+      <img
+        alt="Lucas Gordon"
+        class="w-24 h-24 mx-auto rounded-full boder-t"
+        src="https://randomuser.me/api/portraits/men/61.jpg"
+      />
+    </div>
+    <div
+      class="text-center bg-white py-10 rounded-b-lg"
+    >
+      <h3
+        class="text-xl font-semibold"
+      >
+        Lucas Gordon
+      </h3>
+      <p
+        class="font-light mb-5"
+      >
+        lucas.gordon@example.com
+      </p>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-blue-300"
+      >
+        Agregar amigo
+      </button>
+    </div>
+  </div>
+</div>
+`;

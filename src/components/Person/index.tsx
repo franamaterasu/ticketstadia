@@ -34,7 +34,7 @@ const Person = ({ info }: PersonProps) => {
         <img
           className='w-24 h-24 mx-auto rounded-full boder-t'
           src={imagen}
-          alt='Imagen de perfil'
+          alt={nombre}
         />
       </div>
       <div className='text-center bg-white py-10 rounded-b-lg'>
