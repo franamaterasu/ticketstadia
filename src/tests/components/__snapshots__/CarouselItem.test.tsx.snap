@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<CarouselItem/> > should match with snapshot 1`] = `
+<div>
+  <div
+    class="relative bg-gray-600 hover:opacity-80 rounded-md"
+  >
+    <img
+      alt="Indie Waves Festival"
+      class="rounded-md"
+      src="https://images.pexels.com/photos/167605/pexels-photo-167605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      style="height: 524px;"
+    />
+    <div
+      class="absolute p-15 left-0 bottom-14 w-full text-center px-5 xl:text-left xl:left-10"
+    >
+      <h4
+        class="text-white font-bold text-5xl lg:mb-5 xl:text-6xl"
+      >
+        Indie Waves Festival
+      </h4>
+      <p
+        class="hidden lg:text-white lg:w-1/2 xl:block"
+      >
+        Descubre las últimas bandas y artistas independientes en el escenario indie más grande del año. Indie Waves Festival es el lugar donde las nuevas tendencias musicales toman forma.
+      </p>
+    </div>
+  </div>
+</div>
+`;
