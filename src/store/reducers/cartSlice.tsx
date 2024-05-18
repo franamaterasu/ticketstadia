@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Fest } from '../../types';
 
 type CartState = {
@@ -26,7 +26,7 @@ export const cartSlice = createSlice({
   } satisfies CartState as CartState,
 
   reducers: {
-    addEvent: (state, action) => {
+    addEvent: (state, action: PayloadAction<Fest>) => {
       const event: Fest = action.payload;
 
       const eventExist = state.cart.some(
@@ -38,22 +38,22 @@ export const cartSlice = createSlice({
         : alert('El evento ya existe en el carrito');
     },
 
-    deleteEvent: (state, action) => {
-      const id: number = action.payload;
+    deleteEvent: (state, action: PayloadAction<number>) => {
+      const id = action.payload;
 
       state.cart = state.cart.filter((item) => item.id !== id);
     },
 
-    selectEvent: (state, action) => {
-      const event: Fest = action.payload;
+    selectEvent: (state, action: PayloadAction<Fest>) => {
+      const event = action.payload;
 
       state.selectedEvent = event;
 
       state.isSelectedEvent = true;
     },
 
-    confirmBuyEvent: (state, action) => {
-      const id: number = action.payload;
+    confirmBuyEvent: (state, action: PayloadAction<number>) => {
+      const id = action.payload;
 
       state.cart = state.cart.filter((item) => item.id !== id);
 

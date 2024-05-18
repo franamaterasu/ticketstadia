@@ -12,7 +12,7 @@ export const eventsSlice = createSlice({
   } satisfies EventsState as EventsState,
 
   reducers: {
-    addEvent: (state, action: PayloadAction<{ event: Fest }>) => {
+    addEvent: (state, action: PayloadAction<Fest>) => {
       const event: Fest = action.payload;
 
       const eventExist = state.events.some(
@@ -24,8 +24,8 @@ export const eventsSlice = createSlice({
         : alert('El evento ya existe en tu lista');
     },
 
-    deleteEvent: (state, action) => {
-      const id: number = action.payload;
+    deleteEvent: (state, action: PayloadAction<number>) => {
+      const id = action.payload;
 
       state.events = state.events.filter((item) => item.id !== id);
     },

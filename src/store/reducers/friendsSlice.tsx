@@ -12,7 +12,7 @@ export const friendsSlice = createSlice({
   } satisfies FriendsState as FriendsState,
 
   reducers: {
-    addFriend: (state, action: PayloadAction<{ newFriend: Profile }>) => {
+    addFriend: (state, action: PayloadAction<Profile>) => {
       const newFriend = action.payload;
 
       const friendExist = state.friends.some(
@@ -24,7 +24,7 @@ export const friendsSlice = createSlice({
         : alert(`${newFriend.nombre} ya esta en tu lista de amigos`);
     },
 
-    deleteFriend: (state, action: PayloadAction<{ id: number }>) => {
+    deleteFriend: (state, action: PayloadAction<number>) => {
       const id = action.payload;
 
       state.friends = state.friends.filter((item: Profile) => item.id !== id);
