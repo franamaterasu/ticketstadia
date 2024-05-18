@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Card from '../../components/Card';
-import useFetch from '../../components/hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 import { Fest, Profile } from '../../types';
 import CarouselEvents from '../../components/Carousel';
 import Grid from '../../components/Grid';

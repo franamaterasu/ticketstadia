@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Data, Fest } from '../../types';
+import { Data, Fest } from '../types';
 
 const useFilter = (array: Data) => {
   const [search, setSearch] = useState('');

@@ -7,8 +7,8 @@ import { FaMusic } from 'react-icons/fa6';
 import Grid from '../../components/Grid';
 import { getCategories } from '../../helpers/getCategories';
 import { getCities } from '../../helpers/getCities';
-import useFilter from '../../components/hooks/useFilter';
-import useFetch from '../../components/hooks/useFetch';
+import useFilter from '../../hooks/useFilter';
+import useFetch from '../../hooks/useFetch';
 
 const Events = () => {
   const fest = useFetch('http://localhost:3000/festivales/');

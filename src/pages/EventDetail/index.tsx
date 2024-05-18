@@ -7,7 +7,7 @@ import {
   FaMountainCity,
   FaCalendarDays,
 } from 'react-icons/fa6';
-import useFetch from '../../components/hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 import PayButton from '../../components/PayButton';
 import { Fest } from '../../types';
 

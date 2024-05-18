@@ -2,7 +2,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import CarouselItem from '../CarouselItem';
 import { Fest } from '../../types';
-import useFetch from '../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 import { Link } from 'react-router-dom';
 
 const CarouselEvents = () => {

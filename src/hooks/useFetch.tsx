@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Data } from '../../types';
+import { Data } from '../types';
 import axios from 'axios';
 
 const useFetch = (url: string) => {

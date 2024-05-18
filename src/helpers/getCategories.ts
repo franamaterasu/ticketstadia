@@ -1,4 +1,4 @@
-import useFetch from '../components/hooks/useFetch';
+import useFetch from '../hooks/useFetch';
 import { Fest } from '../types';
 
 export const getCategories = () => {
