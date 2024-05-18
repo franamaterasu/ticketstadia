@@ -1,18 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Profile } from '../../types';
+
+type FriendsState = {
+  friends: Profile[];
+};
 
 export const friendsSlice = createSlice({
   name: 'friends',
   initialState: {
     friends: [],
-  },
+  } satisfies FriendsState as FriendsState,
 
   reducers: {
-    addFriend: (state, action) => {
-      const newFriend: Profile = action.payload;
+    addFriend: (state, action: PayloadAction<{ newFriend: Profile }>) => {
+      const newFriend = action.payload;
 
       const friendExist = state.friends.some(
-        (existFriend) => existFriend.id === newFriend.id
+        (existFriend: Profile) => existFriend.id === newFriend.id
       );
 
       !friendExist
@@ -20,10 +24,10 @@ export const friendsSlice = createSlice({
         : alert(`${newFriend.nombre} ya esta en tu lista de amigos`);
     },
 
-    deleteFriend: (state, action) => {
-      const id: number = action.payload;
+    deleteFriend: (state, action: PayloadAction<{ id: number }>) => {
+      const id = action.payload;
 
-      state.friends = state.friends.filter((item) => item.id !== id);
+      state.friends = state.friends.filter((item: Profile) => item.id !== id);
     },
   },
 });

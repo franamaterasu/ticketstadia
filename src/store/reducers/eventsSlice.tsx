@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Fest } from '../../types';
 
 type EventsState = {
@@ -12,7 +12,7 @@ export const eventsSlice = createSlice({
   } satisfies EventsState as EventsState,
 
   reducers: {
-    addEvent: (state, action) => {
+    addEvent: (state, action: PayloadAction<{ event: Fest }>) => {
       const event: Fest = action.payload;
 
       const eventExist = state.events.some(

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { Fest } from '../../types';
 
-type EventsState = {
+type CartState = {
   cart: Fest[];
   isSelectedEvent: boolean;
   selectedEvent: Fest;
@@ -23,7 +23,7 @@ export const cartSlice = createSlice({
       fecha: '',
       destacado: false,
     },
-  } satisfies EventsState as unknown as EventsState,
+  } satisfies CartState as CartState,
 
   reducers: {
     addEvent: (state, action) => {
