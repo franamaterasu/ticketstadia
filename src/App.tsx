@@ -9,6 +9,7 @@ import store from './store/';
 import EventDetail from './pages/EventDetail';
 import FavoriteEvents from './pages/FavoriteEvents';
 import FavoriteFriends from './pages/FavoriteFriends';
+import Error from './pages/Error';
 import Category from './pages/Category';
 import AuthenticationGuard from './components/AuthenticationGuard';
 import { useAuth0 } from '@auth0/auth0-react';
@@ -54,6 +55,10 @@ function App() {
             <Route
               path='/category/:category'
               element={<AuthenticationGuard component={Category} />}
+            />
+            <Route
+              path='*'
+              element={<AuthenticationGuard component={Error} />}
             />
           </Routes>
         </section>

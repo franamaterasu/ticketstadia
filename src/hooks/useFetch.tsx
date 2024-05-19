@@ -7,9 +7,9 @@ const useFetch = (url: string) => {
 
   useEffect(() => {
     axios
-      .get(url)
-      .then((res) => setData(res.data))
-      .catch((error) => console.log(error));
+      .get(url) // Petición 'get' a la URL
+      .then((res) => setData(res.data)) // Si la peticion es OK, guardamos la data en el estado
+      .catch((error) => console.log(error)); //Si la peticion no es OK, se maneja el error y se muestra por consola
   }, []);
 
   return { data };

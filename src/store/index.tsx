@@ -1,15 +1,17 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import eventsReducer from './reducers/eventsSlice';
 import friendsReducer from './reducers/friendsSlice';
 import cartReducer from './reducers/cartSlice';
 
+const mainReducer = combineReducers({
+  events: eventsReducer,
+  friends: friendsReducer,
+  cart: cartReducer,
+});
+
 const store = configureStore({
-  reducer: {
-    events: eventsReducer,
-    friends: friendsReducer,
-    cart: cartReducer,
-  },
+  reducer: mainReducer,
 });
 
 export type AppDispatch = typeof store.dispatch;

@@ -136,7 +136,8 @@ const Events = () => {
             </Grid>
             <Pagination
               currentPage={currentPage}
-              totalPages={Math.ceil(arrayFiltered().length / eventsPerPage)}
+              // Redondeo del numero con 'Math.ceil'
+              totalPages={Math.ceil(arrayFiltered().length / eventsPerPage)} // Longitud del array despues del filtrado / 8
               onPageChange={handlePageChange}
             />
           </>

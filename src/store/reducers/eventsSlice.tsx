@@ -1,9 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Fest } from '../../types';
-
-type EventsState = {
-  events: Fest[];
-};
+import { EventsState, Fest } from '../../types';
 
 export const eventsSlice = createSlice({
   name: 'events',
@@ -12,18 +8,14 @@ export const eventsSlice = createSlice({
   } satisfies EventsState as EventsState,
 
   reducers: {
+    // Agrega un nuevo evento a la lista
     addEvent: (state, action: PayloadAction<Fest>) => {
       const event: Fest = action.payload;
 
-      const eventExist = state.events.some(
-        (favoriteEvent) => favoriteEvent.id === event.id
-      );
-
-      !eventExist
-        ? (state.events = [...state.events, event])
-        : alert('El evento ya existe en tu lista');
+      state.events = [...state.events, event];
     },
 
+    // Elimina un evento de la lista
     deleteEvent: (state, action: PayloadAction<number>) => {
       const id = action.payload;
 

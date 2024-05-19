@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { addEvent } from '../../store/reducers/cartSlice';
 import {
   FaMusic,
@@ -15,6 +15,14 @@ const EventDetail = () => {
   const { eventId } = useParams();
 
   const dispatch = useDispatch();
+
+  const { cart } = useSelector((state) => state.cart);
+
+  const eventExist = cart.some(
+    (cartItem: Fest) => cartItem.id.toString() === eventId
+  );
+
+  console.log(eventExist);
 
   const fest = useFetch(`http://localhost:3000/festivales/${eventId}`);
 
@@ -85,9 +93,10 @@ const EventDetail = () => {
                   />
                   <button
                     style={{ maxHeight: '46px' }}
-                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-                    onClick={() => handleAddClick(fest.data)}>
-                    Agregar al carrito
+                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-blue-300'
+                    onClick={() => handleAddClick(fest.data)}
+                    disabled={eventExist}>
+                    {eventExist ? 'Agregado al carrito' : 'Agregar al carrito'}
                   </button>
                 </section>
               </div>

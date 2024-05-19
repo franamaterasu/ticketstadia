@@ -1,11 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Fest } from '../../types';
-
-type CartState = {
-  cart: Fest[];
-  isSelectedEvent: boolean;
-  selectedEvent: Fest;
-};
+import { CartState, Fest } from '../../types';
 
 export const cartSlice = createSlice({
   name: 'cart',
@@ -26,24 +20,21 @@ export const cartSlice = createSlice({
   } satisfies CartState as CartState,
 
   reducers: {
+    // Agrega un nuevo evento al carrito
     addEvent: (state, action: PayloadAction<Fest>) => {
       const event: Fest = action.payload;
 
-      const eventExist = state.cart.some(
-        (favoriteEvent) => favoriteEvent.id === event.id
-      );
-
-      !eventExist
-        ? (state.cart = [...state.cart, event])
-        : alert('El evento ya existe en el carrito');
+      state.cart = [...state.cart, event];
     },
 
+    // Elimina un evento del carrito
     deleteEvent: (state, action: PayloadAction<number>) => {
       const id = action.payload;
 
       state.cart = state.cart.filter((item) => item.id !== id);
     },
 
+    // Obtiene la informacion del evento seleccionado
     selectEvent: (state, action: PayloadAction<Fest>) => {
       const event = action.payload;
 
@@ -52,6 +43,7 @@ export const cartSlice = createSlice({
       state.isSelectedEvent = true;
     },
 
+    // Confirma la compra del evento seleccionado (Cierra el modal realizando la compra)
     confirmBuyEvent: (state, action: PayloadAction<number>) => {
       const id = action.payload;
 
@@ -60,6 +52,7 @@ export const cartSlice = createSlice({
       state.isSelectedEvent = false;
     },
 
+    // Desconfirma la compra del evento seleccionado (Cierra el modal sin realizar la compra)
     disconfirmBuyEvent: (state) => {
       state.isSelectedEvent = false;
     },
