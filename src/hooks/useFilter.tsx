@@ -14,6 +14,7 @@ const useFilter = (array: Data) => {
     return (
       array
         .sort(
+          // tipado de la key y el value
           (a: { [value: string]: number }, b: { [value: string]: number }) => {
             if (a[sortValue] > b[sortValue]) {
               return 1;

@@ -39,8 +39,6 @@ describe('<CarouselItem/>', () => {
       'Descubre las últimas bandas y artistas independientes en el escenario indie más grande del año. Indie Waves Festival es el lugar donde las nuevas tendencias musicales toman forma.'
     );
 
-    screen.debug();
-
     expect(image).toBeDefined();
     expect(title).toBeDefined();
     expect(description).toBeDefined();

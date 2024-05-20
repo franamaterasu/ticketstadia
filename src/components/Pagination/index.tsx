@@ -1,14 +1,9 @@
 type PaginationProps = {
-  currentPage: number;
   totalPages: number;
   onPageChange: (pageNumber: number) => void;
 };
 
-const Pagination = ({
-  currentPage,
-  totalPages,
-  onPageChange,
-}: PaginationProps) => {
+const Pagination = ({ totalPages, onPageChange }: PaginationProps) => {
   const pageNumbers = [];
 
   for (let x = 1; x <= totalPages; x++) {
