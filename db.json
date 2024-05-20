@@ -257,6 +257,83 @@
       "ciudad": "Madrid",
       "fecha": "2024-09-08",
       "destacado": true
+    },
+    {
+      "id": 17,
+      "imagen": "https://images.pexels.com/photos/2078071/pexels-photo-2078071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Festival Electrónico Urbano",
+      "descripcion": "Sumérgete en la mejor música electrónica con DJs de renombre mundial en el corazón de la ciudad.",
+      "categoria": "Electronica",
+      "precio": 75,
+      "ciudad": "Barcelona",
+      "fecha": "2024-07-14",
+      "destacado": true
+    },
+    {
+      "id": 18,
+      "imagen": "https://images.pexels.com/photos/210766/pexels-photo-210766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Festival de Jazz y Blues",
+      "descripcion": "Disfruta de una experiencia única con las mejores bandas de jazz y blues en un ambiente relajado y elegante.",
+      "categoria": "Jazz",
+      "precio": 60,
+      "ciudad": "Sevilla",
+      "fecha": "2024-10-10",
+      "destacado": false
+    },
+    {
+      "id": 19,
+      "imagen": "https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Riffs en el Valle",
+      "descripcion": "¡Únete a nosotros en el valle para un fin de semana lleno de riffs de guitarra, solos enérgicos y pura adrenalina rockera!",
+      "categoria": "Rock",
+      "precio": 50,
+      "ciudad": "Madrid",
+      "fecha": "2024-09-25",
+      "destacado": false
+    },
+    {
+      "id": 20,
+      "imagen": "https://images.pexels.com/photos/1763069/pexels-photo-1763069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "ElectroCity Beats",
+      "descripcion": "Sumérgete en la mejor música electrónica con DJs de renombre mundial en el corazón de la ciudad.",
+      "categoria": "Electronica",
+      "precio": 75,
+      "ciudad": "Barcelona",
+      "fecha": "2024-07-14",
+      "destacado": true
+    },
+    {
+      "id": 21,
+      "imagen": "https://images.pexels.com/photos/2059905/pexels-photo-2059905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Sinfonías en Granada",
+      "descripcion": "Una semana de conciertos de música clásica en los escenarios más emblemáticos de la ciudad.",
+      "categoria": "Clasica",
+      "precio": 100,
+      "ciudad": "Granada",
+      "fecha": "2024-11-05",
+      "destacado": true
+    },
+    {
+      "id": 22,
+      "imagen": "https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombre": "Reggae Summer Vibes",
+      "descripcion": "Relájate y disfruta de las mejores vibraciones con los ritmos del reggae y ska bajo el sol de verano.",
+      "categoria": "Reggae",
+      "precio": 50,
+      "ciudad": "Ibiza",
+      "fecha": "2024-07-20",
+      "destacado": true
+    },
+    {
+      "id": 23,
+      "imagen": "https://images.pexels.com/photos/597056/concert-cheering-people-guitar-597056.jpeg",
+      "nombre": "PopStar Festival",
+      "descripcion": "Un evento vibrante con los éxitos del momento y actuaciones de tus artistas pop favoritos.",
+      "categoria": "Indie",
+      "precio": 70,
+      "ciudad": "Málaga",
+      "fecha": "2024-07-28",
+      "destacado": true
     }
   ]
 }
